@@ -31,103 +31,21 @@
             background-position: center;
             background-attachment: fixed;
         }
-        
-        /* Скрываем контент до входа */
-        #mainContent {
-            display: none;
-        }
-        
-        /* Экран входа */
-        #loginScreen {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        
-        .avatar-selection {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .avatar-option {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 3px solid transparent;
-            transition: all 0.3s;
-        }
-        
-        .avatar-option:hover {
-            transform: scale(1.1);
-        }
-        
-        .avatar-option.selected {
-            border-color: #d32f2f;
-            transform: scale(1.1);
-        }
-        
-        .avatar-option img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        /* Профиль в шапке */
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        
-        .profile-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 3px solid #d32f2f;
-        }
-        
-        .profile-info {
-            text-align: right;
-        }
-        
-        .profile-name {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .profile-logout {
-            background: none;
-            border: none;
-            color: #666;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        
-        .profile-logout:hover {
-            color: #d32f2f;
-        }
     </style>
 </head>
 <body>
-    <!-- ЭКРАН ВХОДА (показывается сначала) -->
-    <div id="loginScreen">
+    <!-- ЭКРАН ВХОДА -->
+    <div id="loginScreen" style="
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        text-align: center;
+    ">
         <h1 style="color: #d32f2f; margin-bottom: 10px;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
-        <p style="color: #666; margin-bottom: 30px;">Создай свой профиль для отслеживания прогресса</p>
+        <p style="color: #666; margin-bottom: 30px;">Создай профиль для отслеживания целей</p>
         
         <input type="text" id="userName" placeholder="Твоё имя или ник" style="
             width: 100%;
@@ -139,19 +57,95 @@
             box-sizing: border-box;
         ">
         
+        <!-- РОСТ И ВЕС -->
+        <div style="display: flex; gap: 15px; margin: 20px 0;">
+            <div style="flex: 1;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">
+                    <i class="fas fa-ruler-vertical"></i> Рост (см)
+                </label>
+                <input type="number" id="userHeight" placeholder="Например: 175" style="
+                    width: 100%;
+                    padding: 12px;
+                    border: 2px solid #ddd;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                ">
+            </div>
+            <div style="flex: 1;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">
+                    <i class="fas fa-weight"></i> Вес (кг)
+                </label>
+                <input type="number" id="userWeight" placeholder="Например: 70" style="
+                    width: 100%;
+                    padding: 12px;
+                    border: 2px solid #ddd;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                ">
+            </div>
+        </div>
+        
         <h3 style="margin-bottom: 15px;">Выбери аватарку:</h3>
-        <div class="avatar-selection">
-            <div class="avatar-option selected" data-avatar="avatar1">
-                <img src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Тренер">
+        <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+            <div class="avatar-option selected" data-avatar="avatar1" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 3px solid #d32f2f;
+                transition: all 0.3s;
+            ">
+                <img src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Тренер" style="
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
             </div>
-            <div class="avatar-option" data-avatar="avatar2">
-                <img src="https://img.icons8.com/color/96/000000/weightlift.png" alt="Штанга">
+            <div class="avatar-option" data-avatar="avatar2" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 3px solid transparent;
+                transition: all 0.3s;
+            ">
+                <img src="https://img.icons8.com/color/96/000000/weightlift.png" alt="Штанга" style="
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
             </div>
-            <div class="avatar-option" data-avatar="avatar3">
-                <img src="https://img.icons8.com/color/96/000000/fitness.png" alt="Фитнес">
+            <div class="avatar-option" data-avatar="avatar3" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 3px solid transparent;
+                transition: all 0.3s;
+            ">
+                <img src="https://img.icons8.com/color/96/000000/fitness.png" alt="Фитнес" style="
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
             </div>
-            <div class="avatar-option" data-avatar="avatar4">
-                <img src="https://img.icons8.com/color/96/000000/strong.png" alt="Силач">
+            <div class="avatar-option" data-avatar="avatar4" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 3px solid transparent;
+                transition: all 0.3s;
+            ">
+                <img src="https://img.icons8.com/color/96/000000/strong.png" alt="Силач" style="
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                ">
             </div>
         </div>
         
@@ -170,27 +164,67 @@
         ">
             <i class="fas fa-user-plus"></i> Создать профиль
         </button>
-        
-        <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">
-            ⚡ Данные сохраняются только в твоём браузере
-        </p>
     </div>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ (скрыт до входа) -->
-    <div id="mainContent">
-        <!-- ШАПКА С ПРОФИЛЕМ -->
-        <div class="profile-header" id="profileHeader">
-            <div class="profile-info">
-                <div class="profile-name" id="profileName">Пользователь</div>
-                <button class="profile-logout" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i> Выйти
-                </button>
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div id="mainContent" style="display: none;">
+        <!-- ПРОФИЛЬ С ИМТ -->
+        <div id="profileHeader" style="
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 400px;
+        ">
+            <img id="profileAvatar" src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Аватар" style="
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 3px solid #d32f2f;
+            ">
+            
+            <div style="flex-grow: 1;">
+                <div id="profileName" style="
+                    font-weight: bold;
+                    color: #333;
+                    font-size: 1.1rem;
+                ">Пользователь</div>
+                
+                <div id="bmiInfo" style="
+                    font-size: 0.9rem;
+                    color: #666;
+                    margin-top: 3px;
+                ">
+                    ИМТ: <span id="bmiValue">—</span> • 
+                    <span id="bmiStatus" style="font-weight: bold;">—</span>
+                </div>
+                
+                <div style="font-size: 0.8rem; color: #888; margin-top: 3px;">
+                    <span id="userStats">Рост: — см • Вес: — кг</span>
+                </div>
             </div>
-            <img class="profile-avatar" id="profileAvatar" src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Аватар">
+            
+            <button onclick="logout()" style="
+                background: none;
+                border: none;
+                color: #666;
+                cursor: pointer;
+                font-size: 1.2rem;
+                padding: 5px 10px;
+            ">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
         </div>
 
-        <!-- Кнопки смены темы -->
-        <div style="text-align: center; margin: 20px 0 40px;">
+        <!-- ТЕМЫ -->
+        <div style="text-align: center; margin: 80px 0 40px;">
             <button onclick="changeTheme('normal')" id="btn-normal" style="
                 padding: 12px 25px;
                 margin: 5px;
@@ -214,8 +248,8 @@
             "><i class="fas fa-fire"></i> Сине-красная</button>
         </div>
 
-        <div class="container">
-            <!-- ОСНОВНАЯ ШАПКА -->
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- ШАПКА -->
             <header style="
                 background: white;
                 padding: 30px;
@@ -223,10 +257,9 @@
                 text-align: center;
                 margin-bottom: 30px;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                position: relative;
             ">
                 <h1 style="color: #d32f2f; margin: 0;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
-                <p style="font-size: 1.2rem; color: #555;">Привет, <span id="welcomeName">друг</span>! Фиксируй. Достигай. Превосходи.</p>
+                <p style="font-size: 1.2rem; color: #555;">Привет, <span id="welcomeName">друг</span>!</p>
                 <div id="currentDate" style="
                     background: linear-gradient(45deg, #d32f2f, #ff5252);
                     color: white;
@@ -239,7 +272,157 @@
             </header>
 
             <main>
-                <!-- КАРТОЧКА 1: Цитата -->
+                <!-- КАРТОЧКА: ВЕС И ИМТ -->
+                <div class="card" style="
+                    background: rgba(255, 255, 255, 0.95);
+                    border-radius: 20px;
+                    padding: 25px;
+                    margin-bottom: 25px;
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                ">
+                    <h2 style="color: #9C27B0; border-bottom: 2px solid #E1BEE7; padding-bottom: 10px;">
+                        <i class="fas fa-weight-scale"></i> Мой вес и ИМТ
+                    </h2>
+                    
+                    <div style="
+                        display: flex;
+                        justify-content: space-around;
+                        background: linear-gradient(45deg, #f3e5f5, #e8eaf6);
+                        padding: 20px;
+                        border-radius: 15px;
+                        margin-bottom: 20px;
+                    ">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.9rem; color: #666;">Рост</div>
+                            <div id="currentHeight" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">— см</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.9rem; color: #666;">Вес</div>
+                            <div id="currentWeight" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">— кг</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.9rem; color: #666;">ИМТ</div>
+                            <div id="currentBMI" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">—</div>
+                        </div>
+                    </div>
+                    
+                    <div id="bmiAssessment" style="
+                        padding: 15px;
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                        text-align: center;
+                        background: #e8f5e9;
+                    ">
+                        <h3 style="margin: 0 0 10px 0; color: #2E7D32;">
+                            <i class="fas fa-heartbeat"></i> 
+                            <span id="assessmentText">Введите свои данные</span>
+                        </h3>
+                        <div style="height: 20px; background: #e0e0e0; border-radius: 10px; margin: 10px 0; overflow: hidden;">
+                            <div id="bmiScale" style="
+                                height: 100%;
+                                background: linear-gradient(90deg, #4CAF50, #8BC34A, #FFC107, #FF9800, #F44336);
+                                width: 50%;
+                                border-radius: 10px;
+                            "></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666;">
+                            <span>Недостаток</span>
+                            <span>Норма</span>
+                            <span>Избыток</span>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #7B1FA2; margin-top: 25px;">
+                        <i class="fas fa-edit"></i> Обновить вес
+                    </h3>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <input type="number" id="updateWeight" placeholder="Новый вес (кг)" style="
+                            flex-grow: 1;
+                            padding: 12px;
+                            border: 2px solid #E1BEE7;
+                            border-radius: 10px;
+                            font-size: 1rem;
+                        ">
+                        <button onclick="updateWeight()" style="
+                            padding: 12px 25px;
+                            background: linear-gradient(45deg, #9C27B0, #7B1FA2);
+                            color: white;
+                            border: none;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            font-weight: bold;
+                        ">
+                            <i class="fas fa-save"></i> Сохранить
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: 25px;">
+                        <h3 style="color: #7B1FA2;">
+                            <i class="fas fa-chart-line"></i> История веса
+                        </h3>
+                        <div id="weightChart" style="
+                            height: 100px;
+                            background: #f9f9f9;
+                            border-radius: 10px;
+                            margin: 15px 0;
+                            padding: 10px;
+                            display: flex;
+                            align-items: flex-end;
+                            gap: 5px;
+                        "></div>
+                        <div id="weightLog" style="max-height: 200px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+
+                <!-- КАРТОЧКА: ДРУЗЬЯ -->
+                <div class="card" style="
+                    background: rgba(255, 255, 255, 0.95);
+                    border-radius: 20px;
+                    padding: 25px;
+                    margin-bottom: 25px;
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                ">
+                    <h2 style="color: #2196F3; border-bottom: 2px solid #BBDEFB; padding-bottom: 10px;">
+                        <i class="fas fa-users"></i> Мои друзья
+                    </h2>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <input type="text" id="friendName" placeholder="Имя друга" style="
+                            flex-grow: 1;
+                            padding: 12px;
+                            border: 2px solid #BBDEFB;
+                            border-radius: 10px;
+                            font-size: 1rem;
+                        ">
+                        <button onclick="addFriend()" style="
+                            padding: 12px 25px;
+                            background: linear-gradient(45deg, #2196F3, #1976D2);
+                            color: white;
+                            border: none;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            font-weight: bold;
+                        ">
+                            <i class="fas fa-user-plus"></i> Добавить
+                        </button>
+                    </div>
+                    
+                    <div id="friendsList"></div>
+                    
+                    <div id="friendsComparison" style="
+                        margin-top: 25px;
+                        padding: 20px;
+                        background: #E3F2FD;
+                        border-radius: 15px;
+                    ">
+                        <h3 style="color: #1976D2; margin-top: 0;">
+                            <i class="fas fa-chart-bar"></i> Сравнение с друзьями
+                        </h3>
+                        <div id="comparisonChart"></div>
+                    </div>
+                </div>
+
+                <!-- ОСТАЛЬНЫЕ КАРТОЧКИ (цели, прогресс, советы - как были) -->
                 <div class="card" style="
                     background: rgba(255, 255, 255, 0.95);
                     border-radius: 20px;
@@ -268,7 +451,6 @@
                     "><i class="fas fa-sync-alt"></i> Новая цитата</button>
                 </div>
 
-                <!-- КАРТОЧКА 2: Цели -->
                 <div class="card" style="
                     background: rgba(255, 255, 255, 0.95);
                     border-radius: 20px;
@@ -281,7 +463,7 @@
                     </h2>
                     
                     <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <input type="text" id="goalInput" placeholder="Например: Жим 100кг, Похудеть на 5кг..." style="
+                        <input type="text" id="goalInput" placeholder="Например: Жим 100кг..." style="
                             flex-grow: 1;
                             padding: 12px;
                             border: 2px solid #ddd;
@@ -299,9 +481,7 @@
                         "><i class="fas fa-plus"></i> Добавить</button>
                     </div>
                     
-                    <ul id="goalsList" style="list-style: none; padding: 0;">
-                        <!-- Цели появятся здесь -->
-                    </ul>
+                    <ul id="goalsList" style="list-style: none; padding: 0;"></ul>
                     
                     <div style="margin-top: 25px; padding: 20px; background: #f5f5f5; border-radius: 15px;">
                         <h3>Прогресс: <span id="progressPercent">0%</span></h3>
@@ -311,7 +491,6 @@
                     </div>
                 </div>
 
-                <!-- КАРТОЧКА 3: Прогресс -->
                 <div class="card" style="
                     background: rgba(255, 255, 255, 0.95);
                     border-radius: 20px;
@@ -324,7 +503,7 @@
                     </h2>
                     
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                        <input type="text" id="progressInput" placeholder="Сегодня сделал 5 подходов по 10..." style="
+                        <input type="text" id="progressInput" placeholder="Сегодня сделал..." style="
                             flex-grow: 1;
                             padding: 12px;
                             border: 2px solid #ddd;
@@ -349,12 +528,9 @@
                         "><i class="fas fa-check-circle"></i> Записать</button>
                     </div>
                     
-                    <div id="progressFeed" style="max-height: 300px; overflow-y: auto;">
-                        <!-- Записи появятся здесь -->
-                    </div>
+                    <div id="progressFeed" style="max-height: 300px; overflow-y: auto;"></div>
                 </div>
 
-                <!-- КАРТОЧКА 4: Советы -->
                 <div class="card" style="
                     background: rgba(255, 255, 255, 0.95);
                     border-radius: 20px;
@@ -371,7 +547,7 @@
                         padding: 15px;
                         background: #fff3e0;
                         border-radius: 10px;
-                    ">Не забывай про разминку и заминку. Это предотвратит травмы и ускорит восстановление.</p>
+                    ">Не забывай про разминку и заминку.</p>
                     
                     <button onclick="newTip()" style="
                         padding: 12px 25px;
@@ -387,16 +563,14 @@
                     <div style="background: #f9f9f9; padding: 15px; border-radius: 10px;">
                         <h4>Ещё советы:</h4>
                         <ul>
-                            <li>Пей достаточно воды (30-40 мл на 1 кг веса)</li>
+                            <li>Пей достаточно воды</li>
                             <li>Спи не менее 7-8 часов</li>
-                            <li>Фокусируйся на технике выполнения</li>
-                            <li>Веди дневник тренировок</li>
+                            <li>Фокусируйся на технике</li>
                         </ul>
                     </div>
                 </div>
             </main>
 
-            <!-- ПОДВАЛ -->
             <footer style="
                 text-align: center;
                 padding: 20px;
@@ -410,56 +584,60 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-    
     <script>
         // ========== ПРОФИЛЬ И ВХОД ==========
         let currentUser = null;
         let selectedAvatar = 'avatar1';
         
-        // Выбор аватарки
         document.querySelectorAll('.avatar-option').forEach(avatar => {
             avatar.addEventListener('click', function() {
-                // Убираем выделение у всех
                 document.querySelectorAll('.avatar-option').forEach(a => {
-                    a.classList.remove('selected');
+                    a.style.border = '3px solid transparent';
                 });
-                // Выделяем выбранную
-                this.classList.add('selected');
+                this.style.border = '3px solid #d32f2f';
                 selectedAvatar = this.getAttribute('data-avatar');
             });
         });
         
-        // Создание профиля
         function createProfile() {
             const userName = document.getElementById('userName').value.trim();
+            const userHeight = parseInt(document.getElementById('userHeight').value);
+            const userWeight = parseInt(document.getElementById('userWeight').value);
             
             if (!userName) {
                 alert('Введи своё имя!');
                 return;
             }
+            if (!userHeight || userHeight < 100 || userHeight > 250) {
+                alert('Введи корректный рост (100-250 см)!');
+                return;
+            }
+            if (!userWeight || userWeight < 30 || userWeight > 200) {
+                alert('Введи корректный вес (30-200 кг)!');
+                return;
+            }
             
-            // Создаём объект пользователя
             currentUser = {
-                id: Date.now().toString(), // Уникальный ID
+                id: Date.now().toString(),
                 name: userName,
                 avatar: selectedAvatar,
-                createdAt: new Date().toISOString(),
+                height: userHeight,
+                weight: userWeight,
+                weightHistory: [{
+                    date: new Date().toISOString().split('T')[0],
+                    weight: userWeight
+                }],
+                friends: [],
                 goals: [],
-                progress: []
+                progress: [],
+                createdAt: new Date().toISOString()
             };
             
-            // Сохраняем в localStorage
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            
-            // Показываем основной контент
             showMainContent();
         }
         
-        // Показ основного контента
         function showMainContent() {
-            // Загружаем пользователя
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
@@ -467,12 +645,10 @@
             
             if (!currentUser) return;
             
-            // Обновляем интерфейс
             document.getElementById('welcomeName').textContent = currentUser.name;
             document.getElementById('footerProfileName').textContent = currentUser.name;
             document.getElementById('profileName').textContent = currentUser.name;
             
-            // Устанавливаем аватар
             const avatarUrls = {
                 avatar1: 'https://img.icons8.com/color/96/000000/personal-trainer.png',
                 avatar2: 'https://img.icons8.com/color/96/000000/weightlift.png',
@@ -481,57 +657,359 @@
             };
             document.getElementById('profileAvatar').src = avatarUrls[currentUser.avatar];
             
-            // Показываем/скрываем блоки
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
             
-            // Загружаем данные пользователя
+            updateUserStats();
             loadUserData();
-            
-            // Показываем дату
             updateDate();
         }
         
-        // Выход из профиля
+        function updateUserStats() {
+            if (!currentUser) return;
+            
+            const height = currentUser.height;
+            const weight = currentUser.weight;
+            const bmi = calculateBMI(weight, height);
+            const assessment = getBMIAssessment(bmi);
+            
+            document.getElementById('userStats').textContent = 
+                `Рост: ${height} см • Вес: ${weight} кг`;
+            
+            document.getElementById('currentHeight').textContent = `${height} см`;
+            document.getElementById('currentWeight').textContent = `${weight} кг`;
+            document.getElementById('currentBMI').textContent = bmi.toFixed(1);
+            
+            document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+            document.getElementById('bmiStatus').textContent = assessment.status;
+            document.getElementById('bmiStatus').style.color = assessment.color;
+            
+            document.getElementById('assessmentText').textContent = assessment.text;
+            document.getElementById('bmiAssessment').style.background = assessment.bgColor;
+            
+            const bmiPosition = ((bmi - 16) / (40 - 16)) * 100;
+            document.getElementById('bmiScale').style.width = 
+                `${Math.min(Math.max(bmiPosition, 0), 100)}%`;
+            
+            updateWeightChart();
+            renderFriends();
+        }
+        
+        function calculateBMI(weight, height) {
+            const heightInMeters = height / 100;
+            return weight / (heightInMeters * heightInMeters);
+        }
+        
+        function getBMIAssessment(bmi) {
+            if (bmi < 18.5) {
+                return {
+                    status: 'НЕДОСТАТОК',
+                    text: 'Вес ниже нормы. Увеличь калории!',
+                    color: '#FF9800',
+                    bgColor: '#FFF3E0'
+                };
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                return {
+                    status: 'НОРМА',
+                    text: 'Отличный вес! Продолжай в том же духе!',
+                    color: '#4CAF50',
+                    bgColor: '#E8F5E9'
+                };
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                return {
+                    status: 'ИЗБЫТОК',
+                    text: 'Небольшой избыток веса. Больше тренировок!',
+                    color: '#FF9800',
+                    bgColor: '#FFF3E0'
+                };
+            } else {
+                return {
+                    status: 'ОЖИРЕНИЕ',
+                    text: 'Обратись к врачу, составь план тренировок!',
+                    color: '#F44336',
+                    bgColor: '#FFEBEE'
+                };
+            }
+        }
+        
+        function updateWeight() {
+            if (!currentUser) return;
+            
+            const newWeight = parseInt(document.getElementById('updateWeight').value);
+            if (!newWeight || newWeight < 30 || newWeight > 200) {
+                alert('Введи корректный вес (30-200 кг)!');
+                return;
+            }
+            
+            currentUser.weight = newWeight;
+            currentUser.weightHistory.push({
+                date: new Date().toISOString().split('T')[0],
+                weight: newWeight
+            });
+            
+            saveUserData('all');
+            updateUserStats();
+            document.getElementById('updateWeight').value = '';
+        }
+        
+        function updateWeightChart() {
+            if (!currentUser || currentUser.weightHistory.length === 0) return;
+            
+            const chart = document.getElementById('weightChart');
+            chart.innerHTML = '';
+            
+            const weights = currentUser.weightHistory.map(h => h.weight);
+            const maxWeight = Math.max(...weights);
+            const minWeight = Math.min(...weights);
+            const range = maxWeight - minWeight;
+            
+            currentUser.weightHistory.forEach((record, index) => {
+                const height = range > 0 ? 
+                    ((record.weight - minWeight) / range) * 80 + 20 : 50;
+                
+                const bar = document.createElement('div');
+                bar.style.width = '20px';
+                bar.style.height = `${height}px`;
+                bar.style.background = index === currentUser.weightHistory.length - 1 ? 
+                    '#d32f2f' : '#9C27B0';
+                bar.style.borderRadius = '5px 5px 0 0';
+                bar.style.position = 'relative';
+                bar.title = `${record.date}: ${record.weight}кг`;
+                chart.appendChild(bar);
+            });
+            
+            const log = document.getElementById('weightLog');
+            log.innerHTML = '';
+            
+            currentUser.weightHistory.slice().reverse().forEach(record => {
+                const div = document.createElement('div');
+                div.style.padding = '10px';
+                div.style.marginBottom = '5px';
+                div.style.background = '#f5f5f5';
+                div.style.borderRadius = '5px';
+                div.innerHTML = `
+                    <strong>${record.date}</strong>: ${record.weight} кг
+                `;
+                log.appendChild(div);
+            });
+        }
+        
+        // ========== ДРУЗЬЯ ==========
+        function addFriend() {
+            if (!currentUser) return;
+            
+            const friendName = document.getElementById('friendName').value.trim();
+            if (!friendName) {
+                alert('Введи имя друга!');
+                return;
+            }
+            
+            if (currentUser.friends.some(f => f.name === friendName)) {
+                alert('Этот друг уже есть в списке!');
+                return;
+            }
+            
+            const friendBMI = (Math.random() * 10 + 18).toFixed(1);
+            const friend = {
+                id: Date.now(),
+                name: friendName,
+                bmi: parseFloat(friendBMI),
+                status: getBMIAssessment(friendBMI).status
+            };
+            
+            currentUser.friends.push(friend);
+            saveUserData('friends');
+            renderFriends();
+            document.getElementById('friendName').value = '';
+        }
+        
+        function renderFriends() {
+            if (!currentUser) return;
+            
+            const friendsList = document.getElementById('friendsList');
+            friendsList.innerHTML = '';
+            
+            currentUser.friends.forEach(friend => {
+                const friendDiv = document.createElement('div');
+                friendDiv.style.cssText = `
+                    padding: 15px;
+                    margin-bottom: 10px;
+                    background: #E3F2FD;
+                    border-radius: 10px;
+                    border-left: 4px solid #2196F3;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                `;
+                
+                const bmiColor = friend.status === 'НОРМА' ? '#4CAF50' : 
+                                friend.status === 'НЕДОСТАТОК' ? '#FF9800' : '#F44336';
+                
+                friendDiv.innerHTML = `
+                    <div>
+                        <strong>${friend.name}</strong>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            ИМТ: <span style="color: ${bmiColor}; font-weight: bold;">${friend.bmi}</span> • 
+                            ${friend.status}
+                        </div>
+                    </div>
+                    <button onclick="removeFriend(${friend.id})" style="
+                        background: #FFEBEE;
+                        color: #F44336;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 5px 10px;
+                        cursor: pointer;
+                    ">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                friendsList.appendChild(friendDiv);
+            });
+            
+            updateComparisonChart();
+        }
+        
+        function removeFriend(friendId) {
+            if (!currentUser) return;
+            
+            if (confirm('Удалить друга из списка?')) {
+                currentUser.friends = currentUser.friends.filter(f => f.id !== friendId);
+                saveUserData('friends');
+                renderFriends();
+            }
+        }
+        
+        function updateComparisonChart() {
+            if (!currentUser) return;
+            
+            const comparisonChart = document.getElementById('comparisonChart');
+            comparisonChart.innerHTML = '';
+            
+            const myBMI = calculateBMI(currentUser.weight, currentUser.height);
+            const allBMIs = [
+                { name: currentUser.name, bmi: myBMI, isMe: true }
+            ];
+            
+            currentUser.friends.forEach(friend => {
+                allBMIs.push({ name: friend.name, bmi: friend.bmi, isMe: false });
+            });
+            
+            allBMIs.sort((a, b) => a.bmi - b.bmi);
+            
+            const maxBMI = Math.max(...allBMIs.map(p => p.bmi));
+            const minBMI = Math.min(...allBMIs.map(p => p.bmi));
+            const range = maxBMI - minBMI;
+            
+            allBMIs.forEach(person => {
+                const barWidth = range > 0 ? 
+                    ((person.bmi - minBMI) / range) * 80 + 20 : 50;
+                
+                const bar = document.createElement('div');
+                bar.style.cssText = `
+                    margin-bottom: 10px;
+                    padding: 10px;
+                    background: ${person.isMe ? '#E8F5E9' : '#F5F5F5'};
+                    border-radius: 5px;
+                    border-left: 4px solid ${person.isMe ? '#4CAF50' : '#2196F3'};
+                `;
+                
+                const assessment = getBMIAssessment(person.bmi);
+                
+                bar.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${person.name} ${person.isMe ? '(Вы)' : ''}</strong>
+                            <div style="font-size: 0.9rem; color: #666;">
+                                ИМТ: ${person.bmi.toFixed(1)} • ${assessment.status}
+                            </div>
+                        </div>
+                        <div style="
+                            width: ${barWidth}%;
+                            height: 10px;
+                            background: ${assessment.color};
+                            border-radius: 5px;
+                        "></div>
+                    </div>
+                `;
+                
+                comparisonChart.appendChild(bar);
+            });
+            
+            if (allBMIs.length === 1) {
+                comparisonChart.innerHTML = `
+                    <div style="text-align: center; padding: 20px; color: #666;">
+                        <i class="fas fa-user-plus" style="font-size: 2rem;"></i>
+                        <p>Добавь друзей для сравнения!</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // ========== ОСНОВНЫЕ ФУНКЦИИ ==========
         function logout() {
             if (confirm('Выйти из профиля?')) {
                 localStorage.removeItem('currentUser');
                 currentUser = null;
-                
-                // Показываем экран входа
                 document.getElementById('loginScreen').style.display = 'block';
                 document.getElementById('mainContent').style.display = 'none';
-                
-                // Сбрасываем форму
                 document.getElementById('userName').value = '';
+                document.getElementById('userHeight').value = '';
+                document.getElementById('userWeight').value = '';
                 document.querySelectorAll('.avatar-option').forEach((avatar, index) => {
-                    avatar.classList.remove('selected');
-                    if (index === 0) avatar.classList.add('selected');
+                    avatar.style.border = index === 0 ? '3px solid #d32f2f' : '3px solid transparent';
                 });
                 selectedAvatar = 'avatar1';
             }
         }
         
-        // Загрузка данных пользователя
         function loadUserData() {
             if (!currentUser) return;
             
-            // Загружаем цели
             const savedGoals = localStorage.getItem(`goals_${currentUser.id}`);
             if (savedGoals) {
                 currentUser.goals = JSON.parse(savedGoals);
                 renderGoals();
             }
             
-            // Загружаем прогресс
             const savedProgress = localStorage.getItem(`progress_${currentUser.id}`);
             if (savedProgress) {
                 currentUser.progress = JSON.parse(savedProgress);
                 renderProgress();
             }
+            
+            const savedFriends = localStorage.getItem(`friends_${currentUser.id}`);
+            if (savedFriends) {
+                currentUser.friends = JSON.parse(savedFriends);
+                renderFriends();
+            }
+            
+            const savedWeightHistory = localStorage.getItem(`weightHistory_${currentUser.id}`);
+            if (savedWeightHistory) {
+                currentUser.weightHistory = JSON.parse(savedWeightHistory);
+            }
         }
         
-        // ========== ОСНОВНЫЕ ФУНКЦИИ ==========
+        function saveUserData(type) {
+            if (!currentUser) return;
+            
+            if (type === 'all' || type === 'goals') {
+                localStorage.setItem(`goals_${currentUser.id}`, JSON.stringify(currentUser.goals));
+            }
+            if (type === 'all' || type === 'progress') {
+                localStorage.setItem(`progress_${currentUser.id}`, JSON.stringify(currentUser.progress));
+            }
+            if (type === 'all' || type === 'friends') {
+                localStorage.setItem(`friends_${currentUser.id}`, JSON.stringify(currentUser.friends));
+            }
+            if (type === 'all' || type === 'weight') {
+                localStorage.setItem(`weightHistory_${currentUser.id}`, JSON.stringify(currentUser.weightHistory));
+            }
+            
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+        
         // Цели
         function addGoal() {
             if (!currentUser) return;
@@ -555,113 +1033,6 @@
             input.value = '';
         }
         
-        // Прогресс
-        function addProgress() {
-            if (!currentUser) return;
-            
-            const input = document.getElementById('progressInput');
-            const dateInput = document.getElementById('progressDate');
-            const text = input.value.trim();
-            let date = dateInput.value;
-            
-            if (!text) {
-                alert('Опиши свой прогресс!');
-                return;
-            }
-            
-            if (!date) {
-                const today = new Date();
-                date = today.toISOString().split('T')[0];
-                dateInput.value = date;
-            }
-            
-            currentUser.progress.push({
-                id: Date.now(),
-                text: text,
-                date: date,
-                timestamp: new Date().toISOString()
-            });
-            
-            saveUserData('progress');
-            renderProgress();
-            input.value = '';
-        }
-        
-        // Сохранение данных пользователя
-        function saveUserData(type) {
-            if (!currentUser) return;
-            
-            if (type === 'goals') {
-                localStorage.setItem(`goals_${currentUser.id}`, JSON.stringify(currentUser.goals));
-            } else if (type === 'progress') {
-                localStorage.setItem(`progress_${currentUser.id}`, JSON.stringify(currentUser.progress));
-            }
-            
-            // Обновляем прогресс
-            updateProgressBar();
-        }
-        
-        // ========== ТЕМЫ И ОБЩЕЕ ==========
-        function changeTheme(theme) {
-            const body = document.body;
-            const btnNormal = document.getElementById('btn-normal');
-            const btnRedBlue = document.getElementById('btn-redblue');
-            
-            if (theme === 'red-blue') {
-                body.classList.add('red-blue-theme');
-                btnNormal.style.background = '#666';
-                btnRedBlue.style.background = '#d32f2f';
-                document.querySelectorAll('.card').forEach(card => {
-                    card.style.boxShadow = '0 8px 25px rgba(211, 47, 47, 0.15)';
-                });
-            } else {
-                body.classList.remove('red-blue-theme');
-                btnNormal.style.background = '#333';
-                btnRedBlue.style.background = '#4a63d8';
-                document.querySelectorAll('.card').forEach(card => {
-                    card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
-                });
-            }
-            
-            localStorage.setItem('theme', theme);
-        }
-        
-        function updateDate() {
-            const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const dateString = now.toLocaleDateString('ru-RU', options);
-            document.getElementById('currentDate').textContent = 'Сегодня: ' + dateString;
-        }
-        
-        // Цитаты
-        const quotes = [
-            "Боль, которую ты чувствуешь сегодня, станет силой, которую ты почувствуешь завтра.",
-            "Неважно, как медленно ты продвигаешься. Главное — ты не останавливаешься.",
-            "Ваше тело может выдержать почти все. Ваша задача — убедить в этом разум.",
-            "Сила не в том, чтобы никогда не падать, а в том, чтобы каждый раз подниматься.",
-            "Тренировка — это праздник, на который твое тело приходит в лучшей форме."
-        ];
-        
-        function newQuote() {
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            document.getElementById('quoteText').textContent = '"' + quotes[randomIndex] + '"';
-        }
-        
-        // Советы
-        const tips = [
-            "Не забывай про разминку и заминку. Это предотвратит травмы и ускорит восстановление.",
-            "Сфокусируйся на технике выполнения, а не на максимальном весе.",
-            "Высыпайся! 7-8 часов сна — лучший способ восстановления.",
-            "Пей воду в течение всей тренировки, даже если не чувствуешь жажды.",
-            "Веди дневник тренировок. Записывай веса, подходы и самочувствие."
-        ];
-        
-        function newTip() {
-            const randomIndex = Math.floor(Math.random() * tips.length);
-            document.getElementById('tipText').textContent = tips[randomIndex];
-        }
-        
-        // Отрисовка целей
         function renderGoals() {
             if (!currentUser) return;
             
@@ -715,14 +1086,78 @@
             updateProgressBar();
         }
         
-        // Отрисовка прогресса
+        function toggleGoal(goalId) {
+            if (!currentUser) return;
+            
+            const goal = currentUser.goals.find(g => g.id === goalId);
+            if (goal) {
+                goal.completed = !goal.completed;
+                saveUserData('goals');
+                renderGoals();
+            }
+        }
+        
+        function deleteGoal(goalId) {
+            if (!currentUser) return;
+            
+            if (confirm('Удалить эту цель?')) {
+                currentUser.goals = currentUser.goals.filter(g => g.id !== goalId);
+                saveUserData('goals');
+                renderGoals();
+            }
+        }
+        
+        function updateProgressBar() {
+            if (!currentUser || currentUser.goals.length === 0) {
+                document.getElementById('progressPercent').textContent = '0%';
+                document.getElementById('progressBar').style.width = '0%';
+                return;
+            }
+            
+            const completed = currentUser.goals.filter(g => g.completed).length;
+            const percent = Math.round((completed / currentUser.goals.length) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+        
+        // Прогресс
+        function addProgress() {
+            if (!currentUser) return;
+            
+            const input = document.getElementById('progressInput');
+            const dateInput = document.getElementById('progressDate');
+            const text = input.value.trim();
+            let date = dateInput.value;
+            
+            if (!text) {
+                alert('Опиши свой прогресс!');
+                return;
+            }
+            
+            if (!date) {
+                const today = new Date();
+                date = today.toISOString().split('T')[0];
+                dateInput.value = date;
+            }
+            
+            currentUser.progress.push({
+                id: Date.now(),
+                text: text,
+                date: date,
+                timestamp: new Date().toISOString()
+            });
+            
+            saveUserData('progress');
+            renderProgress();
+            input.value = '';
+        }
+        
         function renderProgress() {
             if (!currentUser) return;
             
             const progressFeed = document.getElementById('progressFeed');
             progressFeed.innerHTML = '';
             
-            // Сортируем по дате (новые сверху)
             currentUser.progress.sort((a, b) => new Date(b.date) - new Date(a.date));
             
             currentUser.progress.forEach(entry => {
@@ -758,25 +1193,9 @@
             });
         }
         
-        // Вспомогательные функции
-        function toggleGoal(goalId) {
-            const goal = currentUser.goals.find(g => g.id === goalId);
-            if (goal) {
-                goal.completed = !goal.completed;
-                saveUserData('goals');
-                renderGoals();
-            }
-        }
-        
-        function deleteGoal(goalId) {
-            if (confirm('Удалить эту цель?')) {
-                currentUser.goals = currentUser.goals.filter(g => g.id !== goalId);
-                saveUserData('goals');
-                renderGoals();
-            }
-        }
-        
         function deleteProgress(progressId) {
+            if (!currentUser) return;
+            
             if (confirm('Удалить эту запись?')) {
                 currentUser.progress = currentUser.progress.filter(p => p.id !== progressId);
                 saveUserData('progress');
@@ -784,33 +1203,76 @@
             }
         }
         
-        function updateProgressBar() {
-            if (!currentUser || currentUser.goals.length === 0) {
-                document.getElementById('progressPercent').textContent = '0%';
-                document.getElementById('progressBar').style.width = '0%';
-                return;
+        // Темы
+        function changeTheme(theme) {
+            const body = document.body;
+            const btnNormal = document.getElementById('btn-normal');
+            const btnRedBlue = document.getElementById('btn-redblue');
+            
+            if (theme === 'red-blue') {
+                body.classList.add('red-blue-theme');
+                btnNormal.style.background = '#666';
+                btnRedBlue.style.background = '#d32f2f';
+                document.querySelectorAll('.card').forEach(card => {
+                    card.style.boxShadow = '0 8px 25px rgba(211, 47, 47, 0.15)';
+                });
+            } else {
+                body.classList.remove('red-blue-theme');
+                btnNormal.style.background = '#333';
+                btnRedBlue.style.background = '#4a63d8';
+                document.querySelectorAll('.card').forEach(card => {
+                    card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
+                });
             }
             
-            const completed = currentUser.goals.filter(g => g.completed).length;
-            const percent = Math.round((completed / currentUser.goals.length) * 100);
-            document.getElementById('progressPercent').textContent = percent + '%';
-            document.getElementById('progressBar').style.width = percent + '%';
+            localStorage.setItem('theme', theme);
         }
         
-        // ========== ЗАПУСК ПРИ ЗАГРУЗКЕ ==========
+        // Общие
+        function updateDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('ru-RU', options);
+            document.getElementById('currentDate').textContent = 'Сегодня: ' + dateString;
+        }
+        
+        const quotes = [
+            "Боль, которую ты чувствуешь сегодня, станет силой, которую ты почувствуешь завтра.",
+            "Неважно, как медленно ты продвигаешься. Главное — ты не останавливаешься.",
+            "Ваше тело может выдержать почти все. Ваша задача — убедить в этом разум.",
+            "Сила не в том, чтобы никогда не падать, а в том, чтобы каждый раз подниматься.",
+            "Тренировка — это праздник, на который твое тело приходит в лучшей форме."
+        ];
+        
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quoteText').textContent = '"' + quotes[randomIndex] + '"';
+        }
+        
+        const tips = [
+            "Не забывай про разминку и заминку. Это предотвратит травмы и ускорит восстановление.",
+            "Сфокусируйся на технике выполнения, а не на максимальном весе.",
+            "Высыпайся! 7-8 часов сна — лучший способ восстановления.",
+            "Пей воду в течение всей тренировки, даже если не чувствуешь жажду.",
+            "Веди дневник тренировок. Записывай веса, подходы и самочувствие."
+        ];
+        
+        function newTip() {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            document.getElementById('tipText').textContent = tips[randomIndex];
+        }
+        
+        // Запуск
         document.addEventListener('DOMContentLoaded', function() {
-            // Проверяем, есть ли сохранённый пользователь
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
                 showMainContent();
             }
             
-            // Устанавливаем сегодняшнюю дату
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('progressDate').value = today;
             
-            // Загружаем сохранённую тему
             const savedTheme = localStorage.getItem('theme') || 'normal';
             changeTheme(savedTheme);
         });
