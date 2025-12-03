@@ -8,7 +8,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ФОН САЙТА */
         body {
             background: 
                 linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)),
@@ -35,560 +34,180 @@
 </head>
 <body>
     <!-- ЭКРАН ВХОДА -->
-    <div id="loginScreen" style="
-        max-width: 400px;
-        margin: 50px auto;
-        padding: 40px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        text-align: center;
-    ">
-        <h1 style="color: #d32f2f; margin-bottom: 10px;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
-        <p style="color: #666; margin-bottom: 30px;">Создай профиль для отслеживания целей</p>
+    <div id="loginScreen" style="max-width:400px;margin:50px auto;padding:40px;background:white;border-radius:20px;box-shadow:0 15px 35px rgba(0,0,0,0.2);text-align:center;">
+        <h1 style="color:#d32f2f;margin-bottom:10px;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
+        <p style="color:#666;margin-bottom:30px;">Создай профиль для отслеживания целей</p>
         
-        <input type="text" id="userName" placeholder="Твоё имя или ник" style="
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            box-sizing: border-box;
-        ">
+        <input type="text" id="userName" placeholder="Твоё имя или ник" style="width:100%;padding:15px;margin-bottom:20px;border:2px solid #ddd;border-radius:10px;font-size:1rem;box-sizing:border-box;">
         
-        <!-- РОСТ И ВЕС -->
-        <div style="display: flex; gap: 15px; margin: 20px 0;">
-            <div style="flex: 1;">
-                <label style="display: block; margin-bottom: 5px; font-weight: bold;">
-                    <i class="fas fa-ruler-vertical"></i> Рост (см)
-                </label>
-                <input type="number" id="userHeight" placeholder="Например: 175" style="
-                    width: 100%;
-                    padding: 12px;
-                    border: 2px solid #ddd;
-                    border-radius: 10px;
-                    font-size: 1rem;
-                ">
+        <div style="display:flex;gap:15px;margin:20px 0;">
+            <div style="flex:1;">
+                <label style="display:block;margin-bottom:5px;font-weight:bold;"><i class="fas fa-ruler-vertical"></i> Рост (см)</label>
+                <input type="number" id="userHeight" placeholder="Например: 175" style="width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;">
             </div>
-            <div style="flex: 1;">
-                <label style="display: block; margin-bottom: 5px; font-weight: bold;">
-                    <i class="fas fa-weight"></i> Вес (кг)
-                </label>
-                <input type="number" id="userWeight" placeholder="Например: 70" style="
-                    width: 100%;
-                    padding: 12px;
-                    border: 2px solid #ddd;
-                    border-radius: 10px;
-                    font-size: 1rem;
-                ">
+            <div style="flex:1;">
+                <label style="display:block;margin-bottom:5px;font-weight:bold;"><i class="fas fa-weight"></i> Вес (кг)</label>
+                <input type="number" id="userWeight" placeholder="Например: 70" style="width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;">
             </div>
         </div>
         
-        <h3 style="margin-bottom: 15px;">Выбери аватарку:</h3>
-        <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
-            <div class="avatar-option selected" data-avatar="avatar1" style="
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                cursor: pointer;
-                border: 3px solid #d32f2f;
-                transition: all 0.3s;
-            ">
-                <img src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Тренер" style="
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    object-fit: cover;
-                ">
+        <h3 style="margin-bottom:15px;">Выбери аватарку:</h3>
+        <div style="display:flex;justify-content:center;gap:15px;margin:20px 0;">
+            <div class="avatar-option selected" data-avatar="avatar1" style="width:60px;height:60px;border-radius:50%;cursor:pointer;border:3px solid #d32f2f;transition:all 0.3s;">
+                <img src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Тренер" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
             </div>
-            <div class="avatar-option" data-avatar="avatar2" style="
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                cursor: pointer;
-                border: 3px solid transparent;
-                transition: all 0.3s;
-            ">
-                <img src="https://img.icons8.com/color/96/000000/weightlift.png" alt="Штанга" style="
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    object-fit: cover;
-                ">
+            <div class="avatar-option" data-avatar="avatar2" style="width:60px;height:60px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all 0.3s;">
+                <img src="https://img.icons8.com/color/96/000000/weightlift.png" alt="Штанга" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
             </div>
-            <div class="avatar-option" data-avatar="avatar3" style="
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                cursor: pointer;
-                border: 3px solid transparent;
-                transition: all 0.3s;
-            ">
-                <img src="https://img.icons8.com/color/96/000000/fitness.png" alt="Фитнес" style="
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    object-fit: cover;
-                ">
+            <div class="avatar-option" data-avatar="avatar3" style="width:60px;height:60px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all 0.3s;">
+                <img src="https://img.icons8.com/color/96/000000/fitness.png" alt="Фитнес" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
             </div>
-            <div class="avatar-option" data-avatar="avatar4" style="
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                cursor: pointer;
-                border: 3px solid transparent;
-                transition: all 0.3s;
-            ">
-                <img src="https://img.icons8.com/color/96/000000/strong.png" alt="Силач" style="
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    object-fit: cover;
-                ">
+            <div class="avatar-option" data-avatar="avatar4" style="width:60px;height:60px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all 0.3s;">
+                <img src="https://img.icons8.com/color/96/000000/strong.png" alt="Силач" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
             </div>
         </div>
         
-        <button onclick="createProfile()" style="
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #d32f2f, #ff5252);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: transform 0.3s;
-        ">
-            <i class="fas fa-user-plus"></i> Создать профиль
-        </button>
+        <button onclick="createProfile()" style="width:100%;padding:15px;background:linear-gradient(45deg,#d32f2f,#ff5252);color:white;border:none;border-radius:10px;font-size:1.1rem;font-weight:bold;cursor:pointer;margin-top:30px;transition:transform 0.3s;"><i class="fas fa-user-plus"></i> Создать профиль</button>
     </div>
 
     <!-- ОСНОВНОЙ КОНТЕНТ -->
-    <div id="mainContent" style="display: none;">
-        <!-- ПРОФИЛЬ С ИМТ -->
-        <div id="profileHeader" style="
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            max-width: 400px;
-        ">
-            <img id="profileAvatar" src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Аватар" style="
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                border: 3px solid #d32f2f;
-            ">
-            
-            <div style="flex-grow: 1;">
-                <div id="profileName" style="
-                    font-weight: bold;
-                    color: #333;
-                    font-size: 1.1rem;
-                ">Пользователь</div>
-                
-                <div id="bmiInfo" style="
-                    font-size: 0.9rem;
-                    color: #666;
-                    margin-top: 3px;
-                ">
-                    ИМТ: <span id="bmiValue">—</span> • 
-                    <span id="bmiStatus" style="font-weight: bold;">—</span>
-                </div>
-                
-                <div style="font-size: 0.8rem; color: #888; margin-top: 3px;">
-                    <span id="userStats">Рост: — см • Вес: — кг</span>
-                </div>
+    <div id="mainContent" style="display:none;">
+        <!-- ПРОФИЛЬ -->
+        <div id="profileHeader" style="display:flex;align-items:center;gap:15px;background:white;padding:15px 25px;border-radius:50px;box-shadow:0 5px 20px rgba(0,0,0,0.1);position:fixed;top:20px;right:20px;z-index:1000;max-width:400px;">
+            <img id="profileAvatar" src="https://img.icons8.com/color/96/000000/personal-trainer.png" alt="Аватар" style="width:60px;height:60px;border-radius:50%;border:3px solid #d32f2f;">
+            <div style="flex-grow:1;">
+                <div id="profileName" style="font-weight:bold;color:#333;font-size:1.1rem;">Пользователь</div>
+                <div id="bmiInfo" style="font-size:0.9rem;color:#666;margin-top:3px;">ИМТ: <span id="bmiValue">—</span> • <span id="bmiStatus" style="font-weight:bold;">—</span></div>
+                <div style="font-size:0.8rem;color:#888;margin-top:3px;"><span id="userStats">Рост: — см • Вес: — кг</span></div>
             </div>
-            
-            <button onclick="logout()" style="
-                background: none;
-                border: none;
-                color: #666;
-                cursor: pointer;
-                font-size: 1.2rem;
-                padding: 5px 10px;
-            ">
-                <i class="fas fa-sign-out-alt"></i>
-            </button>
+            <button onclick="logout()" style="background:none;border:none;color:#666;cursor:pointer;font-size:1.2rem;padding:5px 10px;"><i class="fas fa-sign-out-alt"></i></button>
         </div>
 
         <!-- ТЕМЫ -->
-        <div style="text-align: center; margin: 80px 0 40px;">
-            <button onclick="changeTheme('normal')" id="btn-normal" style="
-                padding: 12px 25px;
-                margin: 5px;
-                background: #333;
-                color: white;
-                border: none;
-                border-radius: 25px;
-                font-weight: bold;
-                cursor: pointer;
-            "><i class="fas fa-moon"></i> Чёрно-белая</button>
-            
-            <button onclick="changeTheme('red-blue')" id="btn-redblue" style="
-                padding: 12px 25px;
-                margin: 5px;
-                background: #4a63d8;
-                color: white;
-                border: none;
-                border-radius: 25px;
-                font-weight: bold;
-                cursor: pointer;
-            "><i class="fas fa-fire"></i> Сине-красная</button>
+        <div style="text-align:center;margin:80px 0 40px;">
+            <button onclick="changeTheme('normal')" id="btn-normal" style="padding:12px 25px;margin:5px;background:#333;color:white;border:none;border-radius:25px;font-weight:bold;cursor:pointer;"><i class="fas fa-moon"></i> Чёрно-белая</button>
+            <button onclick="changeTheme('red-blue')" id="btn-redblue" style="padding:12px 25px;margin:5px;background:#4a63d8;color:white;border:none;border-radius:25px;font-weight:bold;cursor:pointer;"><i class="fas fa-fire"></i> Сине-красная</button>
         </div>
 
-        <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="max-width:1200px;margin:0 auto;">
             <!-- ШАПКА -->
-            <header style="
-                background: white;
-                padding: 30px;
-                border-radius: 20px;
-                text-align: center;
-                margin-bottom: 30px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            ">
-                <h1 style="color: #d32f2f; margin: 0;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
-                <p style="font-size: 1.2rem; color: #555;">Привет, <span id="welcomeName">друг</span>!</p>
-                <div id="currentDate" style="
-                    background: linear-gradient(45deg, #d32f2f, #ff5252);
-                    color: white;
-                    display: inline-block;
-                    padding: 10px 25px;
-                    border-radius: 25px;
-                    margin-top: 15px;
-                    font-weight: bold;
-                ">Загрузка даты...</div>
+            <header style="background:white;padding:30px;border-radius:20px;text-align:center;margin-bottom:30px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                <h1 style="color:#d32f2f;margin:0;"><i class="fas fa-dumbbell"></i> GymTracker</h1>
+                <p style="font-size:1.2rem;color:#555;">Привет, <span id="welcomeName">друг</span>!</p>
+                <div id="currentDate" style="background:linear-gradient(45deg,#d32f2f,#ff5252);color:white;display:inline-block;padding:10px 25px;border-radius:25px;margin-top:15px;font-weight:bold;">Загрузка даты...</div>
             </header>
 
             <main>
-                <!-- КАРТОЧКА: ВЕС И ИМТ -->
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #9C27B0; border-bottom: 2px solid #E1BEE7; padding-bottom: 10px;">
-                        <i class="fas fa-weight-scale"></i> Мой вес и ИМТ
-                    </h2>
-                    
-                    <div style="
-                        display: flex;
-                        justify-content: space-around;
-                        background: linear-gradient(45deg, #f3e5f5, #e8eaf6);
-                        padding: 20px;
-                        border-radius: 15px;
-                        margin-bottom: 20px;
-                    ">
-                        <div style="text-align: center;">
-                            <div style="font-size: 0.9rem; color: #666;">Рост</div>
-                            <div id="currentHeight" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">— см</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 0.9rem; color: #666;">Вес</div>
-                            <div id="currentWeight" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">— кг</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 0.9rem; color: #666;">ИМТ</div>
-                            <div id="currentBMI" style="font-size: 2rem; font-weight: bold; color: #7B1FA2;">—</div>
-                        </div>
+                <!-- КАЛЕНДАРЬ ТРЕНИРОВОК -->
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#FF5722;border-bottom:2px solid #FFCCBC;padding-bottom:10px;"><i class="fas fa-calendar-alt"></i> Календарь тренировок</h2>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                        <button onclick="prevMonth()" style="background:#FF5722;color:white;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth" style="margin:0;color:#FF5722;">Декабрь 2024</h3>
+                        <button onclick="nextMonth()" style="background:#FF5722;color:white;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;"><i class="fas fa-chevron-right"></i></button>
                     </div>
-                    
-                    <div id="bmiAssessment" style="
-                        padding: 15px;
-                        border-radius: 10px;
-                        margin-bottom: 20px;
-                        text-align: center;
-                        background: #e8f5e9;
-                    ">
-                        <h3 style="margin: 0 0 10px 0; color: #2E7D32;">
-                            <i class="fas fa-heartbeat"></i> 
-                            <span id="assessmentText">Введите свои данные</span>
-                        </h3>
-                        <div style="height: 20px; background: #e0e0e0; border-radius: 10px; margin: 10px 0; overflow: hidden;">
-                            <div id="bmiScale" style="
-                                height: 100%;
-                                background: linear-gradient(90deg, #4CAF50, #8BC34A, #FFC107, #FF9800, #F44336);
-                                width: 50%;
-                                border-radius: 10px;
-                            "></div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #666;">
-                            <span>Недостаток</span>
-                            <span>Норма</span>
-                            <span>Избыток</span>
-                        </div>
+                    <div id="calendar" style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:20px;"></div>
+                    <div style="display:flex;gap:10px;">
+                        <input type="text" id="workoutInput" placeholder="Сегодня: жим лёжа, приседания..." style="flex-grow:1;padding:12px;border:2px solid #FFCCBC;border-radius:10px;font-size:1rem;">
+                        <button onclick="addWorkout()" style="padding:12px 25px;background:linear-gradient(45deg,#FF5722,#FF7043);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-plus"></i> Добавить</button>
                     </div>
-                    
-                    <h3 style="color: #7B1FA2; margin-top: 25px;">
-                        <i class="fas fa-edit"></i> Обновить вес
-                    </h3>
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <input type="number" id="updateWeight" placeholder="Новый вес (кг)" style="
-                            flex-grow: 1;
-                            padding: 12px;
-                            border: 2px solid #E1BEE7;
-                            border-radius: 10px;
-                            font-size: 1rem;
-                        ">
-                        <button onclick="updateWeight()" style="
-                            padding: 12px 25px;
-                            background: linear-gradient(45deg, #9C27B0, #7B1FA2);
-                            color: white;
-                            border: none;
-                            border-radius: 10px;
-                            cursor: pointer;
-                            font-weight: bold;
-                        ">
-                            <i class="fas fa-save"></i> Сохранить
-                        </button>
-                    </div>
-                    
-                    <div style="margin-top: 25px;">
-                        <h3 style="color: #7B1FA2;">
-                            <i class="fas fa-chart-line"></i> История веса
-                        </h3>
-                        <div id="weightChart" style="
-                            height: 100px;
-                            background: #f9f9f9;
-                            border-radius: 10px;
-                            margin: 15px 0;
-                            padding: 10px;
-                            display: flex;
-                            align-items: flex-end;
-                            gap: 5px;
-                        "></div>
-                        <div id="weightLog" style="max-height: 200px; overflow-y: auto;"></div>
-                    </div>
+                    <div id="workoutsList" style="margin-top:20px;max-height:200px;overflow-y:auto;"></div>
                 </div>
 
-                <!-- КАРТОЧКА: ДРУЗЬЯ -->
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #2196F3; border-bottom: 2px solid #BBDEFB; padding-bottom: 10px;">
-                        <i class="fas fa-users"></i> Мои друзья
-                    </h2>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <input type="text" id="friendName" placeholder="Имя друга" style="
-                            flex-grow: 1;
-                            padding: 12px;
-                            border: 2px solid #BBDEFB;
-                            border-radius: 10px;
-                            font-size: 1rem;
-                        ">
-                        <button onclick="addFriend()" style="
-                            padding: 12px 25px;
-                            background: linear-gradient(45deg, #2196F3, #1976D2);
-                            color: white;
-                            border: none;
-                            border-radius: 10px;
-                            cursor: pointer;
-                            font-weight: bold;
-                        ">
-                            <i class="fas fa-user-plus"></i> Добавить
-                        </button>
+                <!-- ДРУЗЬЯ (улучшенная версия) -->
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#2196F3;border-bottom:2px solid #BBDEFB;padding-bottom:10px;"><i class="fas fa-users"></i> Мои друзья</h2>
+                    <div style="display:flex;gap:10px;margin-bottom:20px;">
+                        <input type="text" id="friendName" placeholder="Имя друга" style="flex-grow:1;padding:12px;border:2px solid #BBDEFB;border-radius:10px;font-size:1rem;">
+                        <button onclick="addFriend()" style="padding:12px 25px;background:linear-gradient(45deg,#2196F3,#1976D2);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-user-plus"></i> Добавить</button>
                     </div>
-                    
                     <div id="friendsList"></div>
-                    
-                    <div id="friendsComparison" style="
-                        margin-top: 25px;
-                        padding: 20px;
-                        background: #E3F2FD;
-                        border-radius: 15px;
-                    ">
-                        <h3 style="color: #1976D2; margin-top: 0;">
-                            <i class="fas fa-chart-bar"></i> Сравнение с друзьями
-                        </h3>
+                    <div id="friendsComparison" style="margin-top:25px;padding:20px;background:#E3F2FD;border-radius:15px;">
+                        <h3 style="color:#1976D2;margin-top:0;"><i class="fas fa-chart-bar"></i> Сравнение с друзьями</h3>
                         <div id="comparisonChart"></div>
                     </div>
                 </div>
 
-                <!-- ОСТАЛЬНЫЕ КАРТОЧКИ (цели, прогресс, советы - как были) -->
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #d32f2f; border-bottom: 2px solid #ffcdd2; padding-bottom: 10px;">
-                        <i class="fas fa-quote-left"></i> Цитата дня
-                    </h2>
-                    <p id="quoteText" style="
-                        font-size: 1.2rem;
-                        font-style: italic;
-                        padding: 20px;
-                        background: #fff9e6;
-                        border-radius: 10px;
-                    ">"Боль, которую ты чувствуешь сегодня, станет силой, которую ты почувствуешь завтра."</p>
-                    <button onclick="newQuote()" style="
-                        padding: 12px 25px;
-                        background: #333;
-                        color: white;
-                        border: none;
-                        border-radius: 10px;
-                        cursor: pointer;
-                        font-weight: bold;
-                    "><i class="fas fa-sync-alt"></i> Новая цитата</button>
+                <!-- ВЕС И ИМТ -->
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#9C27B0;border-bottom:2px solid #E1BEE7;padding-bottom:10px;"><i class="fas fa-weight-scale"></i> Мой вес и ИМТ</h2>
+                    <div style="display:flex;justify-content:space-around;background:linear-gradient(45deg,#f3e5f5,#e8eaf6);padding:20px;border-radius:15px;margin-bottom:20px;">
+                        <div style="text-align:center;"><div style="font-size:0.9rem;color:#666;">Рост</div><div id="currentHeight" style="font-size:2rem;font-weight:bold;color:#7B1FA2;">— см</div></div>
+                        <div style="text-align:center;"><div style="font-size:0.9rem;color:#666;">Вес</div><div id="currentWeight" style="font-size:2rem;font-weight:bold;color:#7B1FA2;">— кг</div></div>
+                        <div style="text-align:center;"><div style="font-size:0.9rem;color:#666;">ИМТ</div><div id="currentBMI" style="font-size:2rem;font-weight:bold;color:#7B1FA2;">—</div></div>
+                    </div>
+                    <div id="bmiAssessment" style="padding:15px;border-radius:10px;margin-bottom:20px;text-align:center;background:#e8f5e9;">
+                        <h3 style="margin:0 0 10px 0;color:#2E7D32;"><i class="fas fa-heartbeat"></i> <span id="assessmentText">Введите данные</span></h3>
+                        <div style="height:20px;background:#e0e0e0;border-radius:10px;margin:10px 0;overflow:hidden;"><div id="bmiScale" style="height:100%;background:linear-gradient(90deg,#4CAF50,#8BC34A,#FFC107,#FF9800,#F44336);width:50%;border-radius:10px;"></div></div>
+                        <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:#666;"><span>Недостаток</span><span>Норма</span><span>Избыток</span></div>
+                    </div>
+                    <h3 style="color:#7B1FA2;margin-top:25px;"><i class="fas fa-edit"></i> Обновить вес</h3>
+                    <div style="display:flex;gap:10px;margin-top:15px;">
+                        <input type="number" id="updateWeight" placeholder="Новый вес (кг)" style="flex-grow:1;padding:12px;border:2px solid #E1BEE7;border-radius:10px;font-size:1rem;">
+                        <button onclick="updateWeight()" style="padding:12px 25px;background:linear-gradient(45deg,#9C27B0,#7B1FA2);color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-save"></i> Сохранить</button>
+                    </div>
+                    <div style="margin-top:25px;">
+                        <h3 style="color:#7B1FA2;"><i class="fas fa-chart-line"></i> История веса</h3>
+                        <div id="weightChart" style="height:100px;background:#f9f9f9;border-radius:10px;margin:15px 0;padding:10px;display:flex;align-items:flex-end;gap:5px;"></div>
+                        <div id="weightLog" style="max-height:200px;overflow-y:auto;"></div>
+                    </div>
                 </div>
 
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #1a237e; border-bottom: 2px solid #c5cae9; padding-bottom: 10px;">
-                        <i class="fas fa-bullseye"></i> Мои цели
-                    </h2>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <input type="text" id="goalInput" placeholder="Например: Жим 100кг..." style="
-                            flex-grow: 1;
-                            padding: 12px;
-                            border: 2px solid #ddd;
-                            border-radius: 10px;
-                            font-size: 1rem;
-                        ">
-                        <button onclick="addGoal()" style="
-                            padding: 12px 25px;
-                            background: #1a237e;
-                            color: white;
-                            border: none;
-                            border-radius: 10px;
-                            cursor: pointer;
-                            font-weight: bold;
-                        "><i class="fas fa-plus"></i> Добавить</button>
+                <!-- ОСТАЛЬНЫЕ КАРТОЧКИ -->
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#d32f2f;border-bottom:2px solid #ffcdd2;padding-bottom:10px;"><i class="fas fa-quote-left"></i> Цитата дня</h2>
+                    <p id="quoteText" style="font-size:1.2rem;font-style:italic;padding:20px;background:#fff9e6;border-radius:10px;">"Боль, которую ты чувствуешь сегодня, станет силой, которую ты почувствуешь завтра."</p>
+                    <button onclick="newQuote()" style="padding:12px 25px;background:#333;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-sync-alt"></i> Новая цитата</button>
+                </div>
+
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#1a237e;border-bottom:2px solid #c5cae9;padding-bottom:10px;"><i class="fas fa-bullseye"></i> Мои цели</h2>
+                    <div style="display:flex;gap:10px;margin-bottom:20px;">
+                        <input type="text" id="goalInput" placeholder="Например: Жим 100кг..." style="flex-grow:1;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;">
+                        <button onclick="addGoal()" style="padding:12px 25px;background:#1a237e;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-plus"></i> Добавить</button>
                     </div>
-                    
-                    <ul id="goalsList" style="list-style: none; padding: 0;"></ul>
-                    
-                    <div style="margin-top: 25px; padding: 20px; background: #f5f5f5; border-radius: 15px;">
+                    <ul id="goalsList" style="list-style:none;padding:0;"></ul>
+                    <div style="margin-top:25px;padding:20px;background:#f5f5f5;border-radius:15px;">
                         <h3>Прогресс: <span id="progressPercent">0%</span></h3>
-                        <div style="height: 25px; background: #e0e0e0; border-radius: 12px; margin-top: 10px; overflow: hidden;">
-                            <div id="progressBar" style="height: 100%; background: linear-gradient(90deg, #d32f2f, #ff5252); width: 0%; border-radius: 12px; transition: width 0.5s;"></div>
-                        </div>
+                        <div style="height:25px;background:#e0e0e0;border-radius:12px;margin-top:10px;overflow:hidden;"><div id="progressBar" style="height:100%;background:linear-gradient(90deg,#d32f2f,#ff5252);width:0%;border-radius:12px;transition:width 0.5s;"></div></div>
                     </div>
                 </div>
 
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #388e3c; border-bottom: 2px solid #c8e6c9; padding-bottom: 10px;">
-                        <i class="fas fa-chart-line"></i> Мой прогресс
-                    </h2>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                        <input type="text" id="progressInput" placeholder="Сегодня сделал..." style="
-                            flex-grow: 1;
-                            padding: 12px;
-                            border: 2px solid #ddd;
-                            border-radius: 10px;
-                            font-size: 1rem;
-                            min-width: 200px;
-                        ">
-                        <input type="date" id="progressDate" style="
-                            padding: 12px;
-                            border: 2px solid #ddd;
-                            border-radius: 10px;
-                            font-size: 1rem;
-                        ">
-                        <button onclick="addProgress()" style="
-                            padding: 12px 25px;
-                            background: #388e3c;
-                            color: white;
-                            border: none;
-                            border-radius: 10px;
-                            cursor: pointer;
-                            font-weight: bold;
-                        "><i class="fas fa-check-circle"></i> Записать</button>
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#388e3c;border-bottom:2px solid #c8e6c9;padding-bottom:10px;"><i class="fas fa-chart-line"></i> Мой прогресс</h2>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;">
+                        <input type="text" id="progressInput" placeholder="Сегодня сделал..." style="flex-grow:1;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;min-width:200px;">
+                        <input type="date" id="progressDate" style="padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;">
+                        <button onclick="addProgress()" style="padding:12px 25px;background:#388e3c;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;"><i class="fas fa-check-circle"></i> Записать</button>
                     </div>
-                    
-                    <div id="progressFeed" style="max-height: 300px; overflow-y: auto;"></div>
+                    <div id="progressFeed" style="max-height:300px;overflow-y:auto;"></div>
                 </div>
 
-                <div class="card" style="
-                    background: rgba(255, 255, 255, 0.95);
-                    border-radius: 20px;
-                    padding: 25px;
-                    margin-bottom: 25px;
-                    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                ">
-                    <h2 style="color: #ff9800; border-bottom: 2px solid #ffe0b2; padding-bottom: 10px;">
-                        <i class="fas fa-lightbulb"></i> Советы
-                    </h2>
-                    
-                    <p id="tipText" style="
-                        font-size: 1.1rem;
-                        padding: 15px;
-                        background: #fff3e0;
-                        border-radius: 10px;
-                    ">Не забывай про разминку и заминку.</p>
-                    
-                    <button onclick="newTip()" style="
-                        padding: 12px 25px;
-                        background: #ff9800;
-                        color: white;
-                        border: none;
-                        border-radius: 10px;
-                        cursor: pointer;
-                        font-weight: bold;
-                        margin-bottom: 20px;
-                    "><i class="fas fa-lightbulb"></i> Другой совет</button>
-                    
-                    <div style="background: #f9f9f9; padding: 15px; border-radius: 10px;">
+                <div class="card" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:25px;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+                    <h2 style="color:#ff9800;border-bottom:2px solid #ffe0b2;padding-bottom:10px;"><i class="fas fa-lightbulb"></i> Советы</h2>
+                    <p id="tipText" style="font-size:1.1rem;padding:15px;background:#fff3e0;border-radius:10px;">Не забывай про разминку и заминку.</p>
+                    <button onclick="newTip()" style="padding:12px 25px;background:#ff9800;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:bold;margin-bottom:20px;"><i class="fas fa-lightbulb"></i> Другой совет</button>
+                    <div style="background:#f9f9f9;padding:15px;border-radius:10px;">
                         <h4>Ещё советы:</h4>
-                        <ul>
-                            <li>Пей достаточно воды</li>
-                            <li>Спи не менее 7-8 часов</li>
-                            <li>Фокусируйся на технике</li>
-                        </ul>
+                        <ul><li>Пей достаточно воды</li><li>Спи не менее 7-8 часов</li><li>Фокусируйся на технике</li></ul>
                     </div>
                 </div>
             </main>
 
-            <footer style="
-                text-align: center;
-                padding: 20px;
-                margin-top: 40px;
-                color: #666;
-                font-size: 0.9rem;
-            ">
-                <p>Сделано с <i class="fas fa-heart" style="color: #d32f2f;"></i> для всех, кто работает над собой</p>
+            <footer style="text-align:center;padding:20px;margin-top:40px;color:#666;font-size:0.9rem;">
+                <p>Сделано с <i class="fas fa-heart" style="color:#d32f2f;"></i> для всех, кто работает над собой</p>
                 <p>👤 Профиль: <span id="footerProfileName">гость</span> | 💪 Данные сохраняются в твоём браузере</p>
             </footer>
         </div>
     </div>
 
     <script>
-        // ========== ПРОФИЛЬ И ВХОД ==========
+        // ОСНОВНЫЕ ПЕРЕМЕННЫЕ
         let currentUser = null;
         let selectedAvatar = 'avatar1';
+        let currentCalendarDate = new Date();
         
+        // АВАТАРКИ
         document.querySelectorAll('.avatar-option').forEach(avatar => {
             avatar.addEventListener('click', function() {
                 document.querySelectorAll('.avatar-option').forEach(a => {
@@ -599,22 +218,20 @@
             });
         });
         
+        // СОЗДАНИЕ ПРОФИЛЯ
         function createProfile() {
             const userName = document.getElementById('userName').value.trim();
             const userHeight = parseInt(document.getElementById('userHeight').value);
             const userWeight = parseInt(document.getElementById('userWeight').value);
             
             if (!userName) {
-                alert('Введи своё имя!');
-                return;
+                alert('Введи своё имя!'); return;
             }
             if (!userHeight || userHeight < 100 || userHeight > 250) {
-                alert('Введи корректный рост (100-250 см)!');
-                return;
+                alert('Введи корректный рост (100-250 см)!'); return;
             }
             if (!userWeight || userWeight < 30 || userWeight > 200) {
-                alert('Введи корректный вес (30-200 кг)!');
-                return;
+                alert('Введи корректный вес (30-200 кг)!'); return;
             }
             
             currentUser = {
@@ -623,13 +240,11 @@
                 avatar: selectedAvatar,
                 height: userHeight,
                 weight: userWeight,
-                weightHistory: [{
-                    date: new Date().toISOString().split('T')[0],
-                    weight: userWeight
-                }],
+                weightHistory: [{date: new Date().toISOString().split('T')[0], weight: userWeight}],
                 friends: [],
                 goals: [],
                 progress: [],
+                workouts: [],
                 createdAt: new Date().toISOString()
             };
             
@@ -637,12 +252,10 @@
             showMainContent();
         }
         
+        // ПОКАЗ ОСНОВНОГО КОНТЕНТА
         function showMainContent() {
             const savedUser = localStorage.getItem('currentUser');
-            if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-            }
-            
+            if (savedUser) currentUser = JSON.parse(savedUser);
             if (!currentUser) return;
             
             document.getElementById('welcomeName').textContent = currentUser.name;
@@ -663,150 +276,199 @@
             updateUserStats();
             loadUserData();
             updateDate();
+            generateCalendar();
         }
         
-        function updateUserStats() {
-            if (!currentUser) return;
+        // ========== КАЛЕНДАРЬ ТРЕНИРОВОК ==========
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const monthYear = document.getElementById('currentMonth');
             
-            const height = currentUser.height;
-            const weight = currentUser.weight;
-            const bmi = calculateBMI(weight, height);
-            const assessment = getBMIAssessment(bmi);
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
             
-            document.getElementById('userStats').textContent = 
-                `Рост: ${height} см • Вес: ${weight} кг`;
+            const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+            monthYear.textContent = `${monthNames[month]} ${year}`;
             
-            document.getElementById('currentHeight').textContent = `${height} см`;
-            document.getElementById('currentWeight').textContent = `${weight} кг`;
-            document.getElementById('currentBMI').textContent = bmi.toFixed(1);
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
             
-            document.getElementById('bmiValue').textContent = bmi.toFixed(1);
-            document.getElementById('bmiStatus').textContent = assessment.status;
-            document.getElementById('bmiStatus').style.color = assessment.color;
+            calendar.innerHTML = '';
             
-            document.getElementById('assessmentText').textContent = assessment.text;
-            document.getElementById('bmiAssessment').style.background = assessment.bgColor;
-            
-            const bmiPosition = ((bmi - 16) / (40 - 16)) * 100;
-            document.getElementById('bmiScale').style.width = 
-                `${Math.min(Math.max(bmiPosition, 0), 100)}%`;
-            
-            updateWeightChart();
-            renderFriends();
-        }
-        
-        function calculateBMI(weight, height) {
-            const heightInMeters = height / 100;
-            return weight / (heightInMeters * heightInMeters);
-        }
-        
-        function getBMIAssessment(bmi) {
-            if (bmi < 18.5) {
-                return {
-                    status: 'НЕДОСТАТОК',
-                    text: 'Вес ниже нормы. Увеличь калории!',
-                    color: '#FF9800',
-                    bgColor: '#FFF3E0'
-                };
-            } else if (bmi >= 18.5 && bmi <= 24.9) {
-                return {
-                    status: 'НОРМА',
-                    text: 'Отличный вес! Продолжай в том же духе!',
-                    color: '#4CAF50',
-                    bgColor: '#E8F5E9'
-                };
-            } else if (bmi >= 25 && bmi <= 29.9) {
-                return {
-                    status: 'ИЗБЫТОК',
-                    text: 'Небольшой избыток веса. Больше тренировок!',
-                    color: '#FF9800',
-                    bgColor: '#FFF3E0'
-                };
-            } else {
-                return {
-                    status: 'ОЖИРЕНИЕ',
-                    text: 'Обратись к врачу, составь план тренировок!',
-                    color: '#F44336',
-                    bgColor: '#FFEBEE'
-                };
-            }
-        }
-        
-        function updateWeight() {
-            if (!currentUser) return;
-            
-            const newWeight = parseInt(document.getElementById('updateWeight').value);
-            if (!newWeight || newWeight < 30 || newWeight > 200) {
-                alert('Введи корректный вес (30-200 кг)!');
-                return;
-            }
-            
-            currentUser.weight = newWeight;
-            currentUser.weightHistory.push({
-                date: new Date().toISOString().split('T')[0],
-                weight: newWeight
+            // Дни недели
+            const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+            daysOfWeek.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.style.textAlign = 'center';
+                dayElement.style.padding = '10px';
+                dayElement.style.fontWeight = 'bold';
+                dayElement.style.color = '#666';
+                dayElement.textContent = day;
+                calendar.appendChild(dayElement);
             });
             
-            saveUserData('all');
-            updateUserStats();
-            document.getElementById('updateWeight').value = '';
-        }
-        
-        function updateWeightChart() {
-            if (!currentUser || currentUser.weightHistory.length === 0) return;
+            // Пустые ячейки перед первым днём
+            for (let i = 0; i < (firstDay.getDay() + 6) % 7; i++) {
+                const empty = document.createElement('div');
+                calendar.appendChild(empty);
+            }
             
-            const chart = document.getElementById('weightChart');
-            chart.innerHTML = '';
+            // Дни месяца
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
             
-            const weights = currentUser.weightHistory.map(h => h.weight);
-            const maxWeight = Math.max(...weights);
-            const minWeight = Math.min(...weights);
-            const range = maxWeight - minWeight;
-            
-            currentUser.weightHistory.forEach((record, index) => {
-                const height = range > 0 ? 
-                    ((record.weight - minWeight) / range) * 80 + 20 : 50;
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                const dateStr = `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
                 
-                const bar = document.createElement('div');
-                bar.style.width = '20px';
-                bar.style.height = `${height}px`;
-                bar.style.background = index === currentUser.weightHistory.length - 1 ? 
-                    '#d32f2f' : '#9C27B0';
-                bar.style.borderRadius = '5px 5px 0 0';
-                bar.style.position = 'relative';
-                bar.title = `${record.date}: ${record.weight}кг`;
-                chart.appendChild(bar);
-            });
-            
-            const log = document.getElementById('weightLog');
-            log.innerHTML = '';
-            
-            currentUser.weightHistory.slice().reverse().forEach(record => {
-                const div = document.createElement('div');
-                div.style.padding = '10px';
-                div.style.marginBottom = '5px';
-                div.style.background = '#f5f5f5';
-                div.style.borderRadius = '5px';
-                div.innerHTML = `
-                    <strong>${record.date}</strong>: ${record.weight} кг
+                const hasWorkout = currentUser.workouts?.some(w => w.date === dateStr) || false;
+                
+                dayElement.style.cssText = `
+                    text-align: center;
+                    padding: 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    background: ${hasWorkout ? '#FF5722' : '#f5f5f5'};
+                    color: ${hasWorkout ? 'white' : (dateStr === todayStr ? '#FF5722' : '#333')};
+                    font-weight: ${dateStr === todayStr ? 'bold' : 'normal'};
+                    border: ${dateStr === todayStr ? '2px solid #FF5722' : 'none'};
                 `;
-                log.appendChild(div);
-            });
+                
+                dayElement.textContent = day;
+                dayElement.title = hasWorkout ? 'Есть тренировка' : 'Добавить тренировку';
+                dayElement.onclick = () => showWorkoutsForDate(dateStr);
+                
+                calendar.appendChild(dayElement);
+            }
         }
         
-        // ========== ДРУЗЬЯ ==========
+        function prevMonth() {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+            generateCalendar();
+        }
+        
+        function nextMonth() {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+            generateCalendar();
+        }
+        
+        function addWorkout() {
+            if (!currentUser) return;
+            
+            const workoutInput = document.getElementById('workoutInput');
+            const workoutText = workoutInput.value.trim();
+            
+            if (!workoutText) {
+                alert('Опиши тренировку!'); return;
+            }
+            
+            const today = new Date();
+            const dateStr = today.toISOString().split('T')[0];
+            
+            if (!currentUser.workouts) currentUser.workouts = [];
+            
+            currentUser.workouts.push({
+                id: Date.now(),
+                date: dateStr,
+                text: workoutText,
+                timestamp: new Date().toISOString()
+            });
+            
+            saveUserData('workouts');
+            workoutInput.value = '';
+            generateCalendar();
+            renderWorkouts();
+        }
+        
+        function showWorkoutsForDate(dateStr) {
+            if (!currentUser || !currentUser.workouts) return;
+            
+            const workoutsForDate = currentUser.workouts.filter(w => w.date === dateStr);
+            const date = new Date(dateStr).toLocaleDateString('ru-RU');
+            
+            if (workoutsForDate.length === 0) {
+                alert(`${date}: нет тренировок`);
+            } else {
+                let message = `${date}:\n`;
+                workoutsForDate.forEach(w => {
+                    message += `• ${w.text}\n`;
+                });
+                alert(message);
+            }
+        }
+        
+        function renderWorkouts() {
+            if (!currentUser || !currentUser.workouts) return;
+            
+            const workoutsList = document.getElementById('workoutsList');
+            workoutsList.innerHTML = '';
+            
+            // Группируем по дате
+            const workoutsByDate = {};
+            currentUser.workouts.forEach(workout => {
+                if (!workoutsByDate[workout.date]) {
+                    workoutsByDate[workout.date] = [];
+                }
+                workoutsByDate[workout.date].push(workout);
+            });
+            
+            // Сортируем даты
+            const sortedDates = Object.keys(workoutsByDate).sort((a, b) => b.localeCompare(a));
+            
+            sortedDates.forEach(date => {
+                const dateDiv = document.createElement('div');
+                dateDiv.style.cssText = `
+                    margin-bottom: 15px;
+                    padding: 15px;
+                    background: #FFF3E0;
+                    border-radius: 10px;
+                    border-left: 4px solid #FF5722;
+                `;
+                
+                const formattedDate = new Date(date).toLocaleDateString('ru-RU');
+                let workoutsHTML = `<div style="font-weight:bold;color:#FF5722;margin-bottom:8px;">📅 ${formattedDate}</div>`;
+                
+                workoutsByDate[date].forEach(workout => {
+                    workoutsHTML += `
+                        <div style="padding:8px 0;border-bottom:1px dashed #FFCCBC;display:flex;justify-content:space-between;">
+                            <div>${workout.text}</div>
+                            <button onclick="deleteWorkout(${workout.id})" style="background:#FFCCBC;color:#FF5722;border:none;border-radius:5px;padding:2px 8px;cursor:pointer;">×</button>
+                        </div>
+                    `;
+                });
+                
+                dateDiv.innerHTML = workoutsHTML;
+                workoutsList.appendChild(dateDiv);
+            });
+            
+            if (sortedDates.length === 0) {
+                workoutsList.innerHTML = '<div style="text-align:center;padding:20px;color:#666;"><i class="fas fa-dumbbell"></i><p>Пока нет тренировок</p></div>';
+            }
+        }
+        
+        function deleteWorkout(workoutId) {
+            if (!currentUser || !currentUser.workouts) return;
+            
+            if (confirm('Удалить эту тренировку?')) {
+                currentUser.workouts = currentUser.workouts.filter(w => w.id !== workoutId);
+                saveUserData('workouts');
+                generateCalendar();
+                renderWorkouts();
+            }
+        }
+        
+        // ========== ДРУЗЬЯ (улучшенные) ==========
         function addFriend() {
             if (!currentUser) return;
             
             const friendName = document.getElementById('friendName').value.trim();
             if (!friendName) {
-                alert('Введи имя друга!');
-                return;
+                alert('Введи имя друга!'); return;
             }
             
             if (currentUser.friends.some(f => f.name === friendName)) {
-                alert('Этот друг уже есть в списке!');
-                return;
+                alert('Этот друг уже есть в списке!'); return;
             }
             
             const friendBMI = (Math.random() * 10 + 18).toFixed(1);
@@ -814,9 +476,12 @@
                 id: Date.now(),
                 name: friendName,
                 bmi: parseFloat(friendBMI),
-                status: getBMIAssessment(friendBMI).status
+                status: getBMIAssessment(friendBMI).status,
+                goalsCompleted: Math.floor(Math.random() * 10),
+                workoutsThisWeek: Math.floor(Math.random() * 5)
             };
             
+            if (!currentUser.friends) currentUser.friends = [];
             currentUser.friends.push(friend);
             saveUserData('friends');
             renderFriends();
@@ -824,7 +489,7 @@
         }
         
         function renderFriends() {
-            if (!currentUser) return;
+            if (!currentUser || !currentUser.friends) return;
             
             const friendsList = document.getElementById('friendsList');
             friendsList.innerHTML = '';
@@ -837,38 +502,52 @@
                     background: #E3F2FD;
                     border-radius: 10px;
                     border-left: 4px solid #2196F3;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
                 `;
                 
                 const bmiColor = friend.status === 'НОРМА' ? '#4CAF50' : 
                                 friend.status === 'НЕДОСТАТОК' ? '#FF9800' : '#F44336';
                 
                 friendDiv.innerHTML = `
-                    <div>
-                        <strong>${friend.name}</strong>
-                        <div style="font-size: 0.9rem; color: #666;">
-                            ИМТ: <span style="color: ${bmiColor}; font-weight: bold;">${friend.bmi}</span> • 
-                            ${friend.status}
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div style="flex-grow:1;">
+                            <div style="font-weight:bold;font-size:1.1rem;">${friend.name}</div>
+                            <div style="font-size:0.9rem;color:#666;margin-top:5px;">
+                                <div>ИМТ: <span style="color:${bmiColor};font-weight:bold;">${friend.bmi}</span> • ${friend.status}</div>
+                                <div>🎯 Целей: ${friend.goalsCompleted} • 💪 Тренировок: ${friend.workoutsThisWeek}/нед</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:5px;">
+                            <button onclick="compareWithFriend(${friend.id})" style="background:#2196F3;color:white;border:none;border-radius:5px;padding:5px 10px;cursor:pointer;" title="Сравнить">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                            <button onclick="removeFriend(${friend.id})" style="background:#FFEBEE;color:#F44336;border:none;border-radius:5px;padding:5px 10px;cursor:pointer;" title="Удалить">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
                     </div>
-                    <button onclick="removeFriend(${friend.id})" style="
-                        background: #FFEBEE;
-                        color: #F44336;
-                        border: none;
-                        border-radius: 5px;
-                        padding: 5px 10px;
-                        cursor: pointer;
-                    ">
-                        <i class="fas fa-times"></i>
-                    </button>
                 `;
                 
                 friendsList.appendChild(friendDiv);
             });
             
+            if (currentUser.friends.length === 0) {
+                friendsList.innerHTML = '<div style="text-align:center;padding:20px;color:#666;"><i class="fas fa-user-plus"></i><p>Добавь друзей для сравнения!</p></div>';
+            }
+            
             updateComparisonChart();
+        }
+        
+        function compareWithFriend(friendId) {
+            const friend = currentUser.friends.find(f => f.id === friendId);
+            if (!friend) return;
+            
+            const myBMI = calculateBMI(currentUser.weight, currentUser.height);
+            const comparison = myBMI > friend.bmi ? 'выше' : myBMI < friend.bmi ? 'ниже' : 'равен';
+            
+            alert(`Сравнение с ${friend.name}:\n\n` +
+                  `Твой ИМТ: ${myBMI.toFixed(1)}\n` +
+                  `ИМТ ${friend.name}: ${friend.bmi}\n` +
+                  `Твой ИМТ ${comparison} на ${Math.abs(myBMI - friend.bmi).toFixed(1)}`);
         }
         
         function removeFriend(friendId) {
@@ -888,24 +567,25 @@
             comparisonChart.innerHTML = '';
             
             const myBMI = calculateBMI(currentUser.weight, currentUser.height);
-            const allBMIs = [
-                { name: currentUser.name, bmi: myBMI, isMe: true }
+            const allData = [
+                { name: currentUser.name, bmi: myBMI, goals: currentUser.goals?.filter(g => g.completed).length || 0, isMe: true }
             ];
             
-            currentUser.friends.forEach(friend => {
-                allBMIs.push({ name: friend.name, bmi: friend.bmi, isMe: false });
+            (currentUser.friends || []).forEach(friend => {
+                allData.push({ 
+                    name: friend.name, 
+                    bmi: friend.bmi, 
+                    goals: friend.goalsCompleted || 0, 
+                    isMe: false 
+                });
             });
             
-            allBMIs.sort((a, b) => a.bmi - b.bmi);
+            if (allData.length === 1) return;
             
-            const maxBMI = Math.max(...allBMIs.map(p => p.bmi));
-            const minBMI = Math.min(...allBMIs.map(p => p.bmi));
-            const range = maxBMI - minBMI;
+            // Сортировка по ИМТ
+            allData.sort((a, b) => a.bmi - b.bmi);
             
-            allBMIs.forEach(person => {
-                const barWidth = range > 0 ? 
-                    ((person.bmi - minBMI) / range) * 80 + 20 : 50;
-                
+            allData.forEach(person => {
                 const bar = document.createElement('div');
                 bar.style.cssText = `
                     margin-bottom: 10px;
@@ -918,36 +598,266 @@
                 const assessment = getBMIAssessment(person.bmi);
                 
                 bar.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <strong>${person.name} ${person.isMe ? '(Вы)' : ''}</strong>
-                            <div style="font-size: 0.9rem; color: #666;">
+                    <div>
+                        <strong>${person.name} ${person.isMe ? '(Вы)' : ''}</strong>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px;">
+                            <div style="font-size:0.9rem;color:#666;">
                                 ИМТ: ${person.bmi.toFixed(1)} • ${assessment.status}
+                                <br>🎯 Целей: ${person.goals}
                             </div>
+                            <div style="
+                                width: 60px;
+                                height: 10px;
+                                background: ${assessment.color};
+                                border-radius: 5px;
+                            "></div>
                         </div>
-                        <div style="
-                            width: ${barWidth}%;
-                            height: 10px;
-                            background: ${assessment.color};
-                            border-radius: 5px;
-                        "></div>
                     </div>
                 `;
                 
                 comparisonChart.appendChild(bar);
             });
+        }
+        
+        // ========== ВЕС И ИМТ ==========
+        function updateUserStats() {
+            if (!currentUser) return;
             
-            if (allBMIs.length === 1) {
-                comparisonChart.innerHTML = `
-                    <div style="text-align: center; padding: 20px; color: #666;">
-                        <i class="fas fa-user-plus" style="font-size: 2rem;"></i>
-                        <p>Добавь друзей для сравнения!</p>
-                    </div>
-                `;
+            const height = currentUser.height;
+            const weight = currentUser.weight;
+            const bmi = calculateBMI(weight, height);
+            const assessment = getBMIAssessment(bmi);
+            
+            document.getElementById('userStats').textContent = `Рост: ${height} см • Вес: ${weight} кг`;
+            document.getElementById('currentHeight').textContent = `${height} см`;
+            document.getElementById('currentWeight').textContent = `${weight} кг`;
+            document.getElementById('currentBMI').textContent = bmi.toFixed(1);
+            document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+            document.getElementById('bmiStatus').textContent = assessment.status;
+            document.getElementById('bmiStatus').style.color = assessment.color;
+            document.getElementById('assessmentText').textContent = assessment.text;
+            document.getElementById('bmiAssessment').style.background = assessment.bgColor;
+            
+            const bmiPosition = ((bmi - 16) / (40 - 16)) * 100;
+            document.getElementById('bmiScale').style.width = `${Math.min(Math.max(bmiPosition, 0), 100)}%`;
+            
+            updateWeightChart();
+            renderFriends();
+        }
+        
+        function calculateBMI(weight, height) {
+            const heightInMeters = height / 100;
+            return weight / (heightInMeters * heightInMeters);
+        }
+        
+        function getBMIAssessment(bmi) {
+            if (bmi < 18.5) {
+                return { status: 'НЕДОСТАТОК', text: 'Вес ниже нормы. Увеличь калории!', color: '#FF9800', bgColor: '#FFF3E0' };
+            } else if (bmi <= 24.9) {
+                return { status: 'НОРМА', text: 'Отличный вес! Продолжай в том же духе!', color: '#4CAF50', bgColor: '#E8F5E9' };
+            } else if (bmi <= 29.9) {
+                return { status: 'ИЗБЫТОК', text: 'Небольшой избыток веса. Больше тренировок!', color: '#FF9800', bgColor: '#FFF3E0' };
+            } else {
+                return { status: 'ОЖИРЕНИЕ', text: 'Обратись к врачу, составь план тренировок!', color: '#F44336', bgColor: '#FFEBEE' };
             }
         }
         
-        // ========== ОСНОВНЫЕ ФУНКЦИИ ==========
+        function updateWeight() {
+            if (!currentUser) return;
+            
+            const newWeight = parseInt(document.getElementById('updateWeight').value);
+            if (!newWeight || newWeight < 30 || newWeight > 200) {
+                alert('Введи корректный вес (30-200 кг)!'); return;
+            }
+            
+            currentUser.weight = newWeight;
+            if (!currentUser.weightHistory) currentUser.weightHistory = [];
+            currentUser.weightHistory.push({
+                date: new Date().toISOString().split('T')[0],
+                weight: newWeight
+            });
+            
+            saveUserData('all');
+            updateUserStats();
+            document.getElementById('updateWeight').value = '';
+        }
+        
+        function updateWeightChart() {
+            if (!currentUser || !currentUser.weightHistory || currentUser.weightHistory.length === 0) return;
+            
+            const chart = document.getElementById('weightChart');
+            chart.innerHTML = '';
+            
+            const weights = currentUser.weightHistory.map(h => h.weight);
+            const maxWeight = Math.max(...weights);
+            const minWeight = Math.min(...weights);
+            const range = maxWeight - minWeight;
+            
+            currentUser.weightHistory.forEach((record, index) => {
+                const height = range > 0 ? ((record.weight - minWeight) / range) * 80 + 20 : 50;
+                const bar = document.createElement('div');
+                bar.style.cssText = `
+                    width: 20px;
+                    height: ${height}px;
+                    background: ${index === currentUser.weightHistory.length - 1 ? '#d32f2f' : '#9C27B0'};
+                    border-radius: 5px 5px 0 0;
+                    position: relative;
+                `;
+                bar.title = `${record.date}: ${record.weight}кг`;
+                chart.appendChild(bar);
+            });
+            
+            const log = document.getElementById('weightLog');
+            log.innerHTML = '';
+            currentUser.weightHistory.slice().reverse().forEach(record => {
+                const div = document.createElement('div');
+                div.style.cssText = 'padding:10px;margin-bottom:5px;background:#f5f5f5;border-radius:5px;';
+                div.innerHTML = `<strong>${record.date}</strong>: ${record.weight} кг`;
+                log.appendChild(div);
+            });
+        }
+        
+        // ========== ЦЕЛИ И ПРОГРЕСС ==========
+        function addGoal() {
+            if (!currentUser) return;
+            const input = document.getElementById('goalInput');
+            const text = input.value.trim();
+            if (!text) { alert('Введи цель!'); return; }
+            
+            if (!currentUser.goals) currentUser.goals = [];
+            currentUser.goals.push({ id: Date.now(), text: text, completed: false });
+            saveUserData('goals');
+            renderGoals();
+            input.value = '';
+        }
+        
+        function renderGoals() {
+            if (!currentUser || !currentUser.goals) return;
+            const goalsList = document.getElementById('goalsList');
+            goalsList.innerHTML = '';
+            
+            currentUser.goals.forEach(goal => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <div style="display:flex;align-items:center;justify-content:space-between;padding:15px;margin-bottom:10px;background:${goal.completed ? '#e8f5e9' : '#f5f5f5'};border-radius:10px;border-left:4px solid ${goal.completed ? '#4caf50' : '#d32f2f'}">
+                        <span style="text-decoration:${goal.completed ? 'line-through' : 'none'};color:${goal.completed ? '#888' : '#333'}">${goal.text}</span>
+                        <div>
+                            <button onclick="toggleGoal(${goal.id})" style="padding:8px 15px;background:${goal.completed ? '#ff9800' : '#4caf50'};color:white;border:none;border-radius:5px;cursor:pointer;margin-right:5px;"><i class="fas ${goal.completed ? 'fa-undo' : 'fa-check'}"></i></button>
+                            <button onclick="deleteGoal(${goal.id})" style="padding:8px 15px;background:#f44336;color:white;border:none;border-radius:5px;cursor:pointer;"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+                goalsList.appendChild(li);
+            });
+            updateProgressBar();
+        }
+        
+        function toggleGoal(goalId) {
+            if (!currentUser) return;
+            const goal = currentUser.goals.find(g => g.id === goalId);
+            if (goal) {
+                goal.completed = !goal.completed;
+                saveUserData('goals');
+                renderGoals();
+            }
+        }
+        
+        function deleteGoal(goalId) {
+            if (!currentUser) return;
+            if (confirm('Удалить эту цель?')) {
+                currentUser.goals = currentUser.goals.filter(g => g.id !== goalId);
+                saveUserData('goals');
+                renderGoals();
+            }
+        }
+        
+        function addProgress() {
+            if (!currentUser) return;
+            const input = document.getElementById('progressInput');
+            const dateInput = document.getElementById('progressDate');
+            const text = input.value.trim();
+            let date = dateInput.value;
+            
+            if (!text) { alert('Опиши прогресс!'); return; }
+            if (!date) {
+                const today = new Date();
+                date = today.toISOString().split('T')[0];
+                dateInput.value = date;
+            }
+            
+            if (!currentUser.progress) currentUser.progress = [];
+            currentUser.progress.push({ id: Date.now(), text: text, date: date, timestamp: new Date().toISOString() });
+            saveUserData('progress');
+            renderProgress();
+            input.value = '';
+        }
+        
+        function renderProgress() {
+            if (!currentUser || !currentUser.progress) return;
+            const progressFeed = document.getElementById('progressFeed');
+            progressFeed.innerHTML = '';
+            
+            currentUser.progress.sort((a, b) => new Date(b.date) - new Date(a.date));
+            currentUser.progress.forEach(entry => {
+                const date = new Date(entry.date).toLocaleDateString('ru-RU');
+                const div = document.createElement('div');
+                div.style.cssText = 'padding:15px;margin-bottom:10px;background:#e3f2fd;border-radius:10px;border-left:4px solid #2196f3';
+                div.innerHTML = `
+                    <div style="font-weight:bold;color:#1976d2;margin-bottom:5px;">📅 ${date}</div>
+                    <div>${entry.text}</div>
+                    <button onclick="deleteProgress(${entry.id})" style="margin-top:10px;padding:5px 10px;background:#ffcdd2;color:#d32f2f;border:none;border-radius:5px;cursor:pointer;font-size:0.9rem;"><i class="fas fa-times"></i> Удалить</button>
+                `;
+                progressFeed.appendChild(div);
+            });
+        }
+        
+        function deleteProgress(progressId) {
+            if (!currentUser) return;
+            if (confirm('Удалить запись?')) {
+                currentUser.progress = currentUser.progress.filter(p => p.id !== progressId);
+                saveUserData('progress');
+                renderProgress();
+            }
+        }
+        
+        // ========== СИСТЕМА СОХРАНЕНИЯ ==========
+        function loadUserData() {
+            if (!currentUser) return;
+            
+            const loadData = (key, prop) => {
+                const saved = localStorage.getItem(`${key}_${currentUser.id}`);
+                if (saved) currentUser[prop] = JSON.parse(saved);
+            };
+            
+            loadData('goals', 'goals');
+            loadData('progress', 'progress');
+            loadData('friends', 'friends');
+            loadData('workouts', 'workouts');
+            loadData('weightHistory', 'weightHistory');
+            
+            renderGoals();
+            renderProgress();
+            renderFriends();
+            renderWorkouts();
+        }
+        
+        function saveUserData(type) {
+            if (!currentUser) return;
+            
+            const saveData = (key, prop) => {
+                localStorage.setItem(`${key}_${currentUser.id}`, JSON.stringify(currentUser[prop] || []));
+            };
+            
+            if (type === 'all' || type === 'goals') saveData('goals', 'goals');
+            if (type === 'all' || type === 'progress') saveData('progress', 'progress');
+            if (type === 'all' || type === 'friends') saveData('friends', 'friends');
+            if (type === 'all' || type === 'workouts') saveData('workouts', 'workouts');
+            if (type === 'all' || type === 'weight') saveData('weightHistory', 'weightHistory');
+            
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        }
+        
+        // ========== ОБЩИЕ ФУНКЦИИ ==========
         function logout() {
             if (confirm('Выйти из профиля?')) {
                 localStorage.removeItem('currentUser');
@@ -964,246 +874,24 @@
             }
         }
         
-        function loadUserData() {
-            if (!currentUser) return;
-            
-            const savedGoals = localStorage.getItem(`goals_${currentUser.id}`);
-            if (savedGoals) {
-                currentUser.goals = JSON.parse(savedGoals);
-                renderGoals();
-            }
-            
-            const savedProgress = localStorage.getItem(`progress_${currentUser.id}`);
-            if (savedProgress) {
-                currentUser.progress = JSON.parse(savedProgress);
-                renderProgress();
-            }
-            
-            const savedFriends = localStorage.getItem(`friends_${currentUser.id}`);
-            if (savedFriends) {
-                currentUser.friends = JSON.parse(savedFriends);
-                renderFriends();
-            }
-            
-            const savedWeightHistory = localStorage.getItem(`weightHistory_${currentUser.id}`);
-            if (savedWeightHistory) {
-                currentUser.weightHistory = JSON.parse(savedWeightHistory);
-            }
-        }
-        
-        function saveUserData(type) {
-            if (!currentUser) return;
-            
-            if (type === 'all' || type === 'goals') {
-                localStorage.setItem(`goals_${currentUser.id}`, JSON.stringify(currentUser.goals));
-            }
-            if (type === 'all' || type === 'progress') {
-                localStorage.setItem(`progress_${currentUser.id}`, JSON.stringify(currentUser.progress));
-            }
-            if (type === 'all' || type === 'friends') {
-                localStorage.setItem(`friends_${currentUser.id}`, JSON.stringify(currentUser.friends));
-            }
-            if (type === 'all' || type === 'weight') {
-                localStorage.setItem(`weightHistory_${currentUser.id}`, JSON.stringify(currentUser.weightHistory));
-            }
-            
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
-        }
-        
-        // Цели
-        function addGoal() {
-            if (!currentUser) return;
-            
-            const input = document.getElementById('goalInput');
-            const text = input.value.trim();
-            
-            if (!text) {
-                alert('Введи цель!');
-                return;
-            }
-            
-            currentUser.goals.push({
-                id: Date.now(),
-                text: text,
-                completed: false
-            });
-            
-            saveUserData('goals');
-            renderGoals();
-            input.value = '';
-        }
-        
-        function renderGoals() {
-            if (!currentUser) return;
-            
-            const goalsList = document.getElementById('goalsList');
-            goalsList.innerHTML = '';
-            
-            currentUser.goals.forEach(goal => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <div style="
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        padding: 15px;
-                        margin-bottom: 10px;
-                        background: ${goal.completed ? '#e8f5e9' : '#f5f5f5'};
-                        border-radius: 10px;
-                        border-left: 4px solid ${goal.completed ? '#4caf50' : '#d32f2f'};
-                    ">
-                        <span style="text-decoration: ${goal.completed ? 'line-through' : 'none'}; color: ${goal.completed ? '#888' : '#333'}">
-                            ${goal.text}
-                        </span>
-                        <div>
-                            <button onclick="toggleGoal(${goal.id})" style="
-                                padding: 8px 15px;
-                                background: ${goal.completed ? '#ff9800' : '#4caf50'};
-                                color: white;
-                                border: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                margin-right: 5px;
-                            ">
-                                <i class="fas ${goal.completed ? 'fa-undo' : 'fa-check'}"></i>
-                            </button>
-                            <button onclick="deleteGoal(${goal.id})" style="
-                                padding: 8px 15px;
-                                background: #f44336;
-                                color: white;
-                                border: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                            ">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                goalsList.appendChild(li);
-            });
-            
-            updateProgressBar();
-        }
-        
-        function toggleGoal(goalId) {
-            if (!currentUser) return;
-            
-            const goal = currentUser.goals.find(g => g.id === goalId);
-            if (goal) {
-                goal.completed = !goal.completed;
-                saveUserData('goals');
-                renderGoals();
-            }
-        }
-        
-        function deleteGoal(goalId) {
-            if (!currentUser) return;
-            
-            if (confirm('Удалить эту цель?')) {
-                currentUser.goals = currentUser.goals.filter(g => g.id !== goalId);
-                saveUserData('goals');
-                renderGoals();
-            }
-        }
-        
         function updateProgressBar() {
-            if (!currentUser || currentUser.goals.length === 0) {
+            if (!currentUser || !currentUser.goals || currentUser.goals.length === 0) {
                 document.getElementById('progressPercent').textContent = '0%';
                 document.getElementById('progressBar').style.width = '0%';
                 return;
             }
-            
             const completed = currentUser.goals.filter(g => g.completed).length;
             const percent = Math.round((completed / currentUser.goals.length) * 100);
             document.getElementById('progressPercent').textContent = percent + '%';
             document.getElementById('progressBar').style.width = percent + '%';
         }
         
-        // Прогресс
-        function addProgress() {
-            if (!currentUser) return;
-            
-            const input = document.getElementById('progressInput');
-            const dateInput = document.getElementById('progressDate');
-            const text = input.value.trim();
-            let date = dateInput.value;
-            
-            if (!text) {
-                alert('Опиши свой прогресс!');
-                return;
-            }
-            
-            if (!date) {
-                const today = new Date();
-                date = today.toISOString().split('T')[0];
-                dateInput.value = date;
-            }
-            
-            currentUser.progress.push({
-                id: Date.now(),
-                text: text,
-                date: date,
-                timestamp: new Date().toISOString()
-            });
-            
-            saveUserData('progress');
-            renderProgress();
-            input.value = '';
+        function updateDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = 'Сегодня: ' + now.toLocaleDateString('ru-RU', options);
         }
         
-        function renderProgress() {
-            if (!currentUser) return;
-            
-            const progressFeed = document.getElementById('progressFeed');
-            progressFeed.innerHTML = '';
-            
-            currentUser.progress.sort((a, b) => new Date(b.date) - new Date(a.date));
-            
-            currentUser.progress.forEach(entry => {
-                const div = document.createElement('div');
-                const date = new Date(entry.date).toLocaleDateString('ru-RU');
-                div.innerHTML = `
-                    <div style="
-                        padding: 15px;
-                        margin-bottom: 10px;
-                        background: #e3f2fd;
-                        border-radius: 10px;
-                        border-left: 4px solid #2196f3;
-                    ">
-                        <div style="font-weight: bold; color: #1976d2; margin-bottom: 5px;">
-                            📅 ${date}
-                        </div>
-                        <div>${entry.text}</div>
-                        <button onclick="deleteProgress(${entry.id})" style="
-                            margin-top: 10px;
-                            padding: 5px 10px;
-                            background: #ffcdd2;
-                            color: #d32f2f;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            font-size: 0.9rem;
-                        ">
-                            <i class="fas fa-times"></i> Удалить
-                        </button>
-                    </div>
-                `;
-                progressFeed.appendChild(div);
-            });
-        }
-        
-        function deleteProgress(progressId) {
-            if (!currentUser) return;
-            
-            if (confirm('Удалить эту запись?')) {
-                currentUser.progress = currentUser.progress.filter(p => p.id !== progressId);
-                saveUserData('progress');
-                renderProgress();
-            }
-        }
-        
-        // Темы
         function changeTheme(theme) {
             const body = document.body;
             const btnNormal = document.getElementById('btn-normal');
@@ -1224,16 +912,7 @@
                     card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
                 });
             }
-            
             localStorage.setItem('theme', theme);
-        }
-        
-        // Общие
-        function updateDate() {
-            const now = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const dateString = now.toLocaleDateString('ru-RU', options);
-            document.getElementById('currentDate').textContent = 'Сегодня: ' + dateString;
         }
         
         const quotes = [
@@ -1262,17 +941,15 @@
             document.getElementById('tipText').textContent = tips[randomIndex];
         }
         
-        // Запуск
+        // ЗАПУСК
         document.addEventListener('DOMContentLoaded', function() {
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
                 showMainContent();
             }
-            
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('progressDate').value = today;
-            
             const savedTheme = localStorage.getItem('theme') || 'normal';
             changeTheme(savedTheme);
         });
