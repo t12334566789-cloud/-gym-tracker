@@ -1,0 +1,36 @@
+/* Простые стили для карточек */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .profile-header {
+        position: static !important;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .profile-info {
+        text-align: center !important;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    button {
+        width: 100% !important;
+    }
+    
+    .input-area {
+        flex-direction: column;
+    }
+}
